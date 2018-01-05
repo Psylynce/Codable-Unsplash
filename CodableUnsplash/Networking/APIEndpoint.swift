@@ -10,12 +10,13 @@ import Foundation
 
 class APIEndpoint {
 
+    let host: String
     var httpMethod: HTTPMethod = .get
 
-    private var host: String
     private var scheme: String = "https"
     private var path: String = "/"
     private var queryParameters = [URLQueryItem]()
+    private var headerFields: [String: String]?
     private var body: Data?
 
     init(host: String) {
@@ -29,11 +30,6 @@ class APIEndpoint {
         return self
     }
 
-    func host(_ host: String) -> APIEndpoint {
-        self.host = host
-        return self
-    }
-
     func path(_ path: String) -> APIEndpoint {
         self.path = path
         return self
@@ -41,6 +37,11 @@ class APIEndpoint {
 
     func queryParameters(_ params: [URLQueryItem]) -> APIEndpoint {
         self.queryParameters = params
+        return self
+    }
+
+    func headerFields(_ fields: [String: String]) -> APIEndpoint {
+        self.headerFields = fields
         return self
     }
 
@@ -64,6 +65,7 @@ class APIEndpoint {
         guard let urlComponentsURL = urlComponents.url else { fatalError("Could not create a url with the components: \(urlComponents)") }
 
         var request = URLRequest(url: urlComponentsURL)
+        request.allHTTPHeaderFields = headerFields
         request.httpMethod = httpMethod.rawValue
         request.httpBody = body
 

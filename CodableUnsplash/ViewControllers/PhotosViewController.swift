@@ -10,10 +10,26 @@ import UIKit
 
 final class PhotosViewController: UIViewController {
 
+    private let photoService = PhotoService()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupAppearance()
+
+        photoService.listPhotos { result in
+            switch result {
+            case let .success(photos):
+                let names = photos.map { $0.user.name }
+                print("""
+Got the list of photos!
+
+\(names.joined(separator: "\n"))
+""")
+            case .failure:
+                print("Failed")
+            }
+        }
     }
 
     private func setupAppearance() {

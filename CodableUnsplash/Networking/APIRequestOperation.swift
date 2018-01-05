@@ -23,7 +23,7 @@ final class APIRequestOperation<Model: Decodable>: Operation {
     private var task: URLSessionDataTask?
     private var completion: NetworkCompletion?
 
-    init(endpoint: APIEndpoint, decoder: JSONDecoder = JSONDecoder(), completion: NetworkCompletion? = nil) {
+    init(endpoint: APIEndpoint, decoder: JSONDecoder = JSONDecoder.decoder, completion: NetworkCompletion? = nil) {
         self.endpoint = endpoint
         self.decoder = decoder
         self.completion = completion

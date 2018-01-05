@@ -13,6 +13,15 @@ enum DecoderError: Error {
 }
 
 extension JSONDecoder {
+    static var decoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+
+        return decoder
+    }
+}
+
+extension JSONDecoder {
     func decode<T>(_ type: T.Type, from data: Data?) throws -> T where T: Decodable {
         guard let data = data else { throw DecoderError.nilData("The data passed in to decode \(type) was nil.") }
         return try decode(type, from: data)
