@@ -67,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				5C6B9E511FFFC3D100D51494 /* AppDelegate.swift */,
-				5C6B9E5D1FFFC3D100D51494 /* Info.plist */,
 				5C6B9E721FFFCD6E00D51494 /* Extensions */,
 				5C6B9E641FFFCA1900D51494 /* Networking */,
 				5C6B9E631FFFCA0E00D51494 /* Models */,
@@ -118,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				5C6B9E581FFFC3D100D51494 /* Assets.xcassets */,
+				5C6B9E5D1FFFC3D100D51494 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -348,7 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H4W46R8JF7;
-				INFOPLIST_FILE = CodableUnsplash/Info.plist;
+				INFOPLIST_FILE = "CodableUnsplash/Supporting FIles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jrp.CodableUnsplash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -363,7 +363,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H4W46R8JF7;
-				INFOPLIST_FILE = CodableUnsplash/Info.plist;
+				INFOPLIST_FILE = "CodableUnsplash/Supporting FIles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jrp.CodableUnsplash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
