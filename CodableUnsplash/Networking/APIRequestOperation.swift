@@ -66,7 +66,7 @@ final class APIRequestOperation<Model: Decodable>: Operation {
                 print("""
                     Error decoding \(Model.self): \(error)
 
-                    Operation Endpoint: \(strongSelf.endpoint)
+                    Operation Endpoint: \(String(describing: strongSelf.endpoint))
                     """)
                 DispatchQueue.main.async {
                     strongSelf.completion?(.failure(error))
