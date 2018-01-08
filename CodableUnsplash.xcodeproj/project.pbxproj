@@ -25,6 +25,7 @@
 		5C6B9E802000005B00D51494 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E7F2000005B00D51494 /* PhotoService.swift */; };
 		5C6B9E822000169000D51494 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E812000169000D51494 /* User.swift */; };
 		5C6B9E84200020B800D51494 /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C6B9E83200020B800D51494 /* APIKeys.plist */; };
+		5C6B9E9D2003B7F200D51494 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6B9E9C2003B7F100D51494 /* Kingfisher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		5C6B9E7F2000005B00D51494 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		5C6B9E812000169000D51494 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C6B9E83200020B800D51494 /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
+		5C6B9E9C2003B7F100D51494 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C6B9E9D2003B7F200D51494 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,7 @@
 			children = (
 				5C6B9E501FFFC3D100D51494 /* CodableUnsplash */,
 				5C6B9E4F1FFFC3D100D51494 /* Products */,
+				5C6B9E9B2003B7F100D51494 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,6 +171,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		5C6B9E9B2003B7F100D51494 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B9E9C2003B7F100D51494 /* Kingfisher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,6 +187,7 @@
 			buildConfigurationList = 5C6B9E601FFFC3D100D51494 /* Build configuration list for PBXNativeTarget "CodableUnsplash" */;
 			buildPhases = (
 				5C6B9E4A1FFFC3D100D51494 /* Sources */,
+				5C6B9E9E2003B80C00D51494 /* ShellScript */,
 				5C6B9E4B1FFFC3D100D51494 /* Frameworks */,
 				5C6B9E4C1FFFC3D100D51494 /* Resources */,
 			);
@@ -234,6 +247,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C6B9E9E2003B80C00D51494 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5C6B9E4A1FFFC3D100D51494 /* Sources */ = {
@@ -392,6 +422,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H4W46R8JF7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "CodableUnsplash/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jrp.CodableUnsplash;
@@ -407,6 +441,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H4W46R8JF7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "CodableUnsplash/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jrp.CodableUnsplash;
