@@ -20,4 +20,11 @@ final class PhotoService: Service {
 
         queue.addOperation(operation)
     }
+
+    func fetchPhoto(id: String, completion: ServiceCompletion<Photo>?) {
+        let endpoint = PhotoEndpoint.fetchPhoto(id: id)
+        let operation = APIRequestOperation<Photo>(endpoint: endpoint, completion: completion)
+
+        queue.addOperation(operation)
+    }
 }

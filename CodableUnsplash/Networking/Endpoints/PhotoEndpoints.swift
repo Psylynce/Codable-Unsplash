@@ -12,4 +12,8 @@ struct PhotoEndpoint {
     static var listPhotos: APIEndpoint {
         return UnsplashEndpoint.configured.path("/photos")
     }
+
+    static func fetchPhoto(id: String) -> APIEndpoint {
+        return UnsplashEndpoint.configured.path("/photos/\(id)")
+    }
 }

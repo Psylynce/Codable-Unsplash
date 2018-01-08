@@ -32,6 +32,24 @@ struct Photo: Codable {
         }
     }
 
+    struct Exif: Codable {
+        let make: String?
+        let model: String?
+        let exposure: String?
+        let aperature: String?
+        let focalLength: String?
+        let iso: Int?
+
+        enum CodingKeys: String, CodingKey {
+            case make
+            case model
+            case exposure = "exposure_time"
+            case aperature
+            case focalLength = "focal_length"
+            case iso
+        }
+    }
+
     let id: String
     let createdAt, updatedAt: Date
     let width, height: Int
@@ -43,6 +61,7 @@ struct Photo: Codable {
     let likedByUser, sponsored: Bool
     let likes: Int
     let user: User
+    let exif: Exif?
 //    let currentUserCollections: [JSONAny]
 
     enum CodingKeys: String, CodingKey {
@@ -59,6 +78,7 @@ struct Photo: Codable {
         case sponsored
         case likes
         case user
+        case exif
 //        case currentUserCollections = "current_user_collections"
     }
 }

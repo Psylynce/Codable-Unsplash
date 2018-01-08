@@ -24,12 +24,6 @@ final class PhotosViewController: UIViewController {
 
             switch result {
             case let .success(photos):
-                let names = photos.map { $0.user.name }
-                print("""
-Got the list of photos!
-
-\(names.joined(separator: "\n"))
-""")
                 strongSelf.photos = photos
                 strongSelf.collectionView.reloadData()
             case .failure:
@@ -62,7 +56,12 @@ extension PhotosViewController: UICollectionViewDataSource {
 }
 
 extension PhotosViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photo = photos[indexPath.item]
+        let vc = PhotoDetailViewController.viewController
+        vc.configure(with: photo)
+        show(vc, sender: self)
+    }
 }
 
 extension PhotosViewController: UICollectionViewDelegateFlowLayout {

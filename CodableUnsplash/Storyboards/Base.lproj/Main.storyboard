@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dvl-2K-dcm">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g3i-id-BSb">
                                     <size key="itemSize" width="50" height="50"/>
@@ -79,7 +79,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dvl-2K-dcm" secondAttribute="bottom" id="A6s-1Z-0XP"/>
-                            <constraint firstItem="dvl-2K-dcm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Oyd-oi-sMS"/>
+                            <constraint firstItem="dvl-2K-dcm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Oyd-oi-sMS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dvl-2K-dcm" secondAttribute="trailing" id="k3H-mo-rKV"/>
                             <constraint firstItem="dvl-2K-dcm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pM4-r0-AHt"/>
                         </constraints>
@@ -93,6 +93,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="372" y="32.833583208395808"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="ocs-6y-nar">
+            <objects>
+                <viewController storyboardIdentifier="PhotoDetailViewController" id="BDT-RM-gmQ" customClass="PhotoDetailViewController" customModule="CodableUnsplash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AEW-g2-cXO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TJY-UE-p1G">
+                                <rect key="frame" x="0.0" y="20" width="375" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="YO5-Dp-9Lm"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gtu-Dd-JjS" firstAttribute="trailing" secondItem="TJY-UE-p1G" secondAttribute="trailing" id="6WG-nl-VRL"/>
+                            <constraint firstItem="TJY-UE-p1G" firstAttribute="top" secondItem="gtu-Dd-JjS" secondAttribute="top" id="7eG-Ca-0Uv"/>
+                            <constraint firstItem="TJY-UE-p1G" firstAttribute="leading" secondItem="gtu-Dd-JjS" secondAttribute="leading" id="uf3-4S-7mB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gtu-Dd-JjS"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="TJY-UE-p1G" id="LUD-yP-cnH"/>
+                        <outlet property="imageViewHeightConstraint" destination="YO5-Dp-9Lm" id="97G-0a-6aJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6fK-T5-qfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1070" y="33"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s56-Qb-zHp">
