@@ -26,6 +26,10 @@
 		5C6B9E822000169000D51494 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E812000169000D51494 /* User.swift */; };
 		5C6B9E84200020B800D51494 /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C6B9E83200020B800D51494 /* APIKeys.plist */; };
 		5C6B9E9D2003B7F200D51494 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6B9E9C2003B7F100D51494 /* Kingfisher.framework */; };
+		5C6B9EA22003B9F400D51494 /* PhotoListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9EA12003B9F400D51494 /* PhotoListCollectionViewCell.swift */; };
+		5C6B9EA52003BA5800D51494 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9EA42003BA5800D51494 /* ReusableView.swift */; };
+		5C8B05C02003BEC900BDC9F5 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8B05BF2003BEC900BDC9F5 /* UIColor+Extensions.swift */; };
+		5C8B05C22003C14600BDC9F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8B05C12003C14600BDC9F5 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		5C6B9E812000169000D51494 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C6B9E83200020B800D51494 /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
 		5C6B9E9C2003B7F100D51494 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		5C6B9EA12003B9F400D51494 /* PhotoListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCollectionViewCell.swift; sourceTree = "<group>"; };
+		5C6B9EA42003BA5800D51494 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		5C8B05BF2003BEC900BDC9F5 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		5C8B05C12003C14600BDC9F5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C8B05C22003C14600BDC9F5 /* QuartzCore.framework in Frameworks */,
 				5C6B9E9D2003B7F200D51494 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,8 +97,10 @@
 				5C6B9E721FFFCD6E00D51494 /* Extensions */,
 				5C6B9E641FFFCA1900D51494 /* Networking */,
 				5C6B9E631FFFCA0E00D51494 /* Models */,
+				5C6B9EA32003BA3E00D51494 /* Protocols */,
 				5C6B9E661FFFCA3A00D51494 /* Storyboards */,
 				5C6B9E671FFFCA5500D51494 /* Supporting Files */,
+				5C6B9E9F2003B9C200D51494 /* Views */,
 				5C6B9E651FFFCA2500D51494 /* ViewControllers */,
 			);
 			path = CodableUnsplash;
@@ -149,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				5C6B9E731FFFCDA900D51494 /* Decoder+Extensions.swift */,
+				5C8B05BF2003BEC900BDC9F5 /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -174,9 +186,34 @@
 		5C6B9E9B2003B7F100D51494 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5C8B05C12003C14600BDC9F5 /* QuartzCore.framework */,
 				5C6B9E9C2003B7F100D51494 /* Kingfisher.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C6B9E9F2003B9C200D51494 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B9EA02003B9D100D51494 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5C6B9EA02003B9D100D51494 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B9EA12003B9F400D51494 /* PhotoListCollectionViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		5C6B9EA32003BA3E00D51494 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B9EA42003BA5800D51494 /* ReusableView.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,12 +314,15 @@
 				5C6B9E761FFFF9E900D51494 /* Photo.swift in Sources */,
 				5C6B9E6F1FFFCB1700D51494 /* HTTP.swift in Sources */,
 				5C6B9E822000169000D51494 /* User.swift in Sources */,
+				5C6B9EA22003B9F400D51494 /* PhotoListCollectionViewCell.swift in Sources */,
 				5C6B9E802000005B00D51494 /* PhotoService.swift in Sources */,
 				5C6B9E741FFFCDA900D51494 /* Decoder+Extensions.swift in Sources */,
 				5C6B9E711FFFCCDA00D51494 /* Result.swift in Sources */,
+				5C6B9EA52003BA5800D51494 /* ReusableView.swift in Sources */,
 				5C6B9E7A1FFFFC0800D51494 /* Service.swift in Sources */,
 				5C6B9E6D1FFFCABF00D51494 /* Operation.swift in Sources */,
 				5C6B9E521FFFC3D100D51494 /* AppDelegate.swift in Sources */,
+				5C8B05C02003BEC900BDC9F5 /* UIColor+Extensions.swift in Sources */,
 				5C6B9E7C1FFFFC3E00D51494 /* UnsplashEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,7 +33,8 @@ struct User: Codable {
     let id: String
     let updatedAt: Date
     let username, name: String
-    let firstName, lastName: String
+    let firstName: String
+    let lastName: String?
     let twitterUsername: String?
     let portfolioURL: URL?
     let bio: String?
