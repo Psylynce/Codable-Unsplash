@@ -8,20 +8,56 @@
 
 /* Begin PBXBuildFile section */
 		5C6B9E521FFFC3D100D51494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E511FFFC3D100D51494 /* AppDelegate.swift */; };
-		5C6B9E541FFFC3D100D51494 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E531FFFC3D100D51494 /* ViewController.swift */; };
+		5C6B9E541FFFC3D100D51494 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E531FFFC3D100D51494 /* PhotosViewController.swift */; };
 		5C6B9E571FFFC3D100D51494 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6B9E551FFFC3D100D51494 /* Main.storyboard */; };
 		5C6B9E591FFFC3D100D51494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C6B9E581FFFC3D100D51494 /* Assets.xcassets */; };
 		5C6B9E5C1FFFC3D100D51494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6B9E5A1FFFC3D100D51494 /* LaunchScreen.storyboard */; };
+		5C6B9E691FFFCA9D00D51494 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E681FFFCA9D00D51494 /* APIEndpoint.swift */; };
+		5C6B9E6B1FFFCAB100D51494 /* APIRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E6A1FFFCAB100D51494 /* APIRequestOperation.swift */; };
+		5C6B9E6D1FFFCABF00D51494 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E6C1FFFCABF00D51494 /* Operation.swift */; };
+		5C6B9E6F1FFFCB1700D51494 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E6E1FFFCB1700D51494 /* HTTP.swift */; };
+		5C6B9E711FFFCCDA00D51494 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E701FFFCCDA00D51494 /* Result.swift */; };
+		5C6B9E741FFFCDA900D51494 /* Decoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E731FFFCDA900D51494 /* Decoder+Extensions.swift */; };
+		5C6B9E761FFFF9E900D51494 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E751FFFF9E900D51494 /* Photo.swift */; };
+		5C6B9E7A1FFFFC0800D51494 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E791FFFFC0800D51494 /* Service.swift */; };
+		5C6B9E7C1FFFFC3E00D51494 /* UnsplashEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E7B1FFFFC3E00D51494 /* UnsplashEndpoint.swift */; };
+		5C6B9E7E1FFFFDFE00D51494 /* PhotoEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E7D1FFFFDFE00D51494 /* PhotoEndpoints.swift */; };
+		5C6B9E802000005B00D51494 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E7F2000005B00D51494 /* PhotoService.swift */; };
+		5C6B9E822000169000D51494 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E812000169000D51494 /* User.swift */; };
+		5C6B9E84200020B800D51494 /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C6B9E83200020B800D51494 /* APIKeys.plist */; };
+		5C6B9E9D2003B7F200D51494 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6B9E9C2003B7F100D51494 /* Kingfisher.framework */; };
+		5C6B9EA22003B9F400D51494 /* PhotoListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9EA12003B9F400D51494 /* PhotoListCollectionViewCell.swift */; };
+		5C6B9EA52003BA5800D51494 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9EA42003BA5800D51494 /* ReusableView.swift */; };
+		5C8B05C02003BEC900BDC9F5 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8B05BF2003BEC900BDC9F5 /* UIColor+Extensions.swift */; };
+		5C8B05C22003C14600BDC9F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8B05C12003C14600BDC9F5 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5C6B9E4E1FFFC3D100D51494 /* CodableUnsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodableUnsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6B9E511FFFC3D100D51494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5C6B9E531FFFC3D100D51494 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5C6B9E531FFFC3D100D51494 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		5C6B9E561FFFC3D100D51494 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C6B9E581FFFC3D100D51494 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C6B9E5B1FFFC3D100D51494 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C6B9E5D1FFFC3D100D51494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C6B9E681FFFCA9D00D51494 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		5C6B9E6A1FFFCAB100D51494 /* APIRequestOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestOperation.swift; sourceTree = "<group>"; };
+		5C6B9E6C1FFFCABF00D51494 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		5C6B9E6E1FFFCB1700D51494 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		5C6B9E701FFFCCDA00D51494 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		5C6B9E731FFFCDA900D51494 /* Decoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decoder+Extensions.swift"; sourceTree = "<group>"; };
+		5C6B9E751FFFF9E900D51494 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		5C6B9E791FFFFC0800D51494 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		5C6B9E7B1FFFFC3E00D51494 /* UnsplashEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashEndpoint.swift; sourceTree = "<group>"; };
+		5C6B9E7D1FFFFDFE00D51494 /* PhotoEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEndpoints.swift; sourceTree = "<group>"; };
+		5C6B9E7F2000005B00D51494 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		5C6B9E812000169000D51494 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5C6B9E83200020B800D51494 /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
+		5C6B9E9C2003B7F100D51494 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		5C6B9EA12003B9F400D51494 /* PhotoListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCollectionViewCell.swift; sourceTree = "<group>"; };
+		5C6B9EA42003BA5800D51494 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		5C8B05BF2003BEC900BDC9F5 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		5C8B05C12003C14600BDC9F5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C8B05C22003C14600BDC9F5 /* QuartzCore.framework in Frameworks */,
+				5C6B9E9D2003B7F200D51494 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +78,7 @@
 			children = (
 				5C6B9E501FFFC3D100D51494 /* CodableUnsplash */,
 				5C6B9E4F1FFFC3D100D51494 /* Products */,
+				5C6B9E9B2003B7F100D51494 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +94,126 @@
 			isa = PBXGroup;
 			children = (
 				5C6B9E511FFFC3D100D51494 /* AppDelegate.swift */,
-				5C6B9E531FFFC3D100D51494 /* ViewController.swift */,
-				5C6B9E551FFFC3D100D51494 /* Main.storyboard */,
-				5C6B9E581FFFC3D100D51494 /* Assets.xcassets */,
-				5C6B9E5A1FFFC3D100D51494 /* LaunchScreen.storyboard */,
-				5C6B9E5D1FFFC3D100D51494 /* Info.plist */,
+				5C6B9E721FFFCD6E00D51494 /* Extensions */,
+				5C6B9E641FFFCA1900D51494 /* Networking */,
+				5C6B9E631FFFCA0E00D51494 /* Models */,
+				5C6B9EA32003BA3E00D51494 /* Protocols */,
+				5C6B9E661FFFCA3A00D51494 /* Storyboards */,
+				5C6B9E671FFFCA5500D51494 /* Supporting Files */,
+				5C6B9E9F2003B9C200D51494 /* Views */,
+				5C6B9E651FFFCA2500D51494 /* ViewControllers */,
 			);
 			path = CodableUnsplash;
+			sourceTree = "<group>";
+		};
+		5C6B9E631FFFCA0E00D51494 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B9E751FFFF9E900D51494 /* Photo.swift */,
+				5C6B9E812000169000D51494 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5C6B9E641FFFCA1900D51494 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B9E781FFFFBED00D51494 /* Services */,
+				5C6B9E771FFFFBE400D51494 /* Endpoints */,
+				5C6B9E681FFFCA9D00D51494 /* APIEndpoint.swift */,
+				5C6B9E6A1FFFCAB100D51494 /* APIRequestOperation.swift */,
+				5C6B9E6E1FFFCB1700D51494 /* HTTP.swift */,
+				5C6B9E6C1FFFCABF00D51494 /* Operation.swift */,
+				5C6B9E701FFFCCDA00D51494 /* Result.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5C6B9E651FFFCA2500D51494 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B9E531FFFC3D100D51494 /* PhotosViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5C6B9E661FFFCA3A00D51494 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B9E551FFFC3D100D51494 /* Main.storyboard */,
+				5C6B9E5A1FFFC3D100D51494 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5C6B9E671FFFCA5500D51494 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B9E581FFFC3D100D51494 /* Assets.xcassets */,
+				5C6B9E5D1FFFC3D100D51494 /* Info.plist */,
+				5C6B9E83200020B800D51494 /* APIKeys.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C6B9E721FFFCD6E00D51494 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B9E731FFFCDA900D51494 /* Decoder+Extensions.swift */,
+				5C8B05BF2003BEC900BDC9F5 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5C6B9E771FFFFBE400D51494 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B9E7B1FFFFC3E00D51494 /* UnsplashEndpoint.swift */,
+				5C6B9E7D1FFFFDFE00D51494 /* PhotoEndpoints.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		5C6B9E781FFFFBED00D51494 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B9E791FFFFC0800D51494 /* Service.swift */,
+				5C6B9E7F2000005B00D51494 /* PhotoService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5C6B9E9B2003B7F100D51494 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C8B05C12003C14600BDC9F5 /* QuartzCore.framework */,
+				5C6B9E9C2003B7F100D51494 /* Kingfisher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C6B9E9F2003B9C200D51494 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B9EA02003B9D100D51494 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5C6B9EA02003B9D100D51494 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B9EA12003B9F400D51494 /* PhotoListCollectionViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		5C6B9EA32003BA3E00D51494 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B9EA42003BA5800D51494 /* ReusableView.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +224,7 @@
 			buildConfigurationList = 5C6B9E601FFFC3D100D51494 /* Build configuration list for PBXNativeTarget "CodableUnsplash" */;
 			buildPhases = (
 				5C6B9E4A1FFFC3D100D51494 /* Sources */,
+				5C6B9E9E2003B80C00D51494 /* ShellScript */,
 				5C6B9E4B1FFFC3D100D51494 /* Frameworks */,
 				5C6B9E4C1FFFC3D100D51494 /* Resources */,
 			);
@@ -124,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C6B9E5C1FFFC3D100D51494 /* LaunchScreen.storyboard in Resources */,
+				5C6B9E84200020B800D51494 /* APIKeys.plist in Resources */,
 				5C6B9E591FFFC3D100D51494 /* Assets.xcassets in Resources */,
 				5C6B9E571FFFC3D100D51494 /* Main.storyboard in Resources */,
 			);
@@ -131,13 +285,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5C6B9E9E2003B80C00D51494 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5C6B9E4A1FFFC3D100D51494 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C6B9E541FFFC3D100D51494 /* ViewController.swift in Sources */,
+				5C6B9E6B1FFFCAB100D51494 /* APIRequestOperation.swift in Sources */,
+				5C6B9E7E1FFFFDFE00D51494 /* PhotoEndpoints.swift in Sources */,
+				5C6B9E541FFFC3D100D51494 /* PhotosViewController.swift in Sources */,
+				5C6B9E691FFFCA9D00D51494 /* APIEndpoint.swift in Sources */,
+				5C6B9E761FFFF9E900D51494 /* Photo.swift in Sources */,
+				5C6B9E6F1FFFCB1700D51494 /* HTTP.swift in Sources */,
+				5C6B9E822000169000D51494 /* User.swift in Sources */,
+				5C6B9EA22003B9F400D51494 /* PhotoListCollectionViewCell.swift in Sources */,
+				5C6B9E802000005B00D51494 /* PhotoService.swift in Sources */,
+				5C6B9E741FFFCDA900D51494 /* Decoder+Extensions.swift in Sources */,
+				5C6B9E711FFFCCDA00D51494 /* Result.swift in Sources */,
+				5C6B9EA52003BA5800D51494 /* ReusableView.swift in Sources */,
+				5C6B9E7A1FFFFC0800D51494 /* Service.swift in Sources */,
+				5C6B9E6D1FFFCABF00D51494 /* Operation.swift in Sources */,
 				5C6B9E521FFFC3D100D51494 /* AppDelegate.swift in Sources */,
+				5C8B05C02003BEC900BDC9F5 /* UIColor+Extensions.swift in Sources */,
+				5C6B9E7C1FFFFC3E00D51494 /* UnsplashEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +462,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H4W46R8JF7;
-				INFOPLIST_FILE = CodableUnsplash/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "CodableUnsplash/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jrp.CodableUnsplash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -291,7 +481,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H4W46R8JF7;
-				INFOPLIST_FILE = CodableUnsplash/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "CodableUnsplash/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jrp.CodableUnsplash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
