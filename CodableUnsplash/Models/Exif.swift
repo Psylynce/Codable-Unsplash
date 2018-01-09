@@ -12,7 +12,7 @@ struct Exif: Codable {
     let make: String?
     let model: String?
     let exposure: String?
-    let aperature: String?
+    let aperture: String?
     let focalLength: String?
     let iso: Int?
 
@@ -20,7 +20,7 @@ struct Exif: Codable {
         case make
         case model
         case exposure = "exposure_time"
-        case aperature
+        case aperture
         case focalLength = "focal_length"
         case iso
     }
@@ -30,7 +30,7 @@ enum ExifRow {
     case make(String)
     case model(String)
     case exposure(String)
-    case aperature(String)
+    case aperture(String)
     case focalLength(String)
     case iso(String)
 
@@ -42,8 +42,8 @@ enum ExifRow {
             return "Model"
         case .exposure:
             return "Exposure"
-        case .aperature:
-            return "Aperature"
+        case .aperture:
+            return "Aperture"
         case .focalLength:
             return "Focal Length"
         case .iso:
@@ -59,8 +59,8 @@ enum ExifRow {
             return model
         case let .exposure(exposure):
             return "\(exposure) s"
-        case let .aperature(aperature):
-            return "f/\(aperature)"
+        case let .aperture(aperture):
+            return "f/\(aperture)"
         case let .focalLength(focalLength):
             return "\(focalLength) mm"
         case let .iso(iso):
@@ -85,8 +85,8 @@ extension Exif {
             newRows.append(.exposure(exposure))
         }
 
-        if let aperature = aperature {
-            newRows.append(.aperature(aperature))
+        if let aperture = aperture {
+            newRows.append(.aperture(aperture))
         }
 
         if let focalLength = focalLength {
