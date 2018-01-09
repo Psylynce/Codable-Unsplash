@@ -17,3 +17,4 @@ extension ReusableView {
 }
 
 extension UICollectionViewCell: ReusableView {}
+extension UITableViewCell: ReusableView {}

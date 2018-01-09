@@ -30,6 +30,8 @@
 		5C6B9EA52003BA5800D51494 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9EA42003BA5800D51494 /* ReusableView.swift */; };
 		5C6DABFE2003DD0000C3AC44 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DABFD2003DD0000C3AC44 /* CardCollectionViewCell.swift */; };
 		5C6DAC002004191C00C3AC44 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DABFF2004191C00C3AC44 /* PhotoDetailViewController.swift */; };
+		5C6DAC02200477B700C3AC44 /* PhotographerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DAC01200477B700C3AC44 /* PhotographerTableViewCell.swift */; };
+		5C6DAC042004782200C3AC44 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DAC032004782200C3AC44 /* PhotoTableViewCell.swift */; };
 		5C8B05C02003BEC900BDC9F5 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8B05BF2003BEC900BDC9F5 /* UIColor+Extensions.swift */; };
 		5C8B05C22003C14600BDC9F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8B05C12003C14600BDC9F5 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,8 @@
 		5C6B9EA42003BA5800D51494 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		5C6DABFD2003DD0000C3AC44 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		5C6DABFF2004191C00C3AC44 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		5C6DAC01200477B700C3AC44 /* PhotographerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotographerTableViewCell.swift; sourceTree = "<group>"; };
+		5C6DAC032004782200C3AC44 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		5C8B05BF2003BEC900BDC9F5 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		5C8B05C12003C14600BDC9F5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -210,6 +214,8 @@
 			children = (
 				5C6DABFD2003DD0000C3AC44 /* CardCollectionViewCell.swift */,
 				5C6B9EA12003B9F400D51494 /* PhotoListCollectionViewCell.swift */,
+				5C6DAC01200477B700C3AC44 /* PhotographerTableViewCell.swift */,
+				5C6DAC032004782200C3AC44 /* PhotoTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -325,7 +331,9 @@
 				5C6B9E802000005B00D51494 /* PhotoService.swift in Sources */,
 				5C6B9E741FFFCDA900D51494 /* Decoder+Extensions.swift in Sources */,
 				5C6B9E711FFFCCDA00D51494 /* Result.swift in Sources */,
+				5C6DAC02200477B700C3AC44 /* PhotographerTableViewCell.swift in Sources */,
 				5C6B9EA52003BA5800D51494 /* ReusableView.swift in Sources */,
+				5C6DAC042004782200C3AC44 /* PhotoTableViewCell.swift in Sources */,
 				5C6B9E7A1FFFFC0800D51494 /* Service.swift in Sources */,
 				5C6B9E6D1FFFCABF00D51494 /* Operation.swift in Sources */,
 				5C6B9E521FFFC3D100D51494 /* AppDelegate.swift in Sources */,
