@@ -32,6 +32,7 @@
 		5C6DAC002004191C00C3AC44 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DABFF2004191C00C3AC44 /* PhotoDetailViewController.swift */; };
 		5C6DAC02200477B700C3AC44 /* PhotographerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DAC01200477B700C3AC44 /* PhotographerTableViewCell.swift */; };
 		5C6DAC042004782200C3AC44 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DAC032004782200C3AC44 /* PhotoTableViewCell.swift */; };
+		5C6DAC062004895600C3AC44 /* Exif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DAC052004895600C3AC44 /* Exif.swift */; };
 		5C8B05C02003BEC900BDC9F5 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8B05BF2003BEC900BDC9F5 /* UIColor+Extensions.swift */; };
 		5C8B05C22003C14600BDC9F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8B05C12003C14600BDC9F5 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		5C6DABFF2004191C00C3AC44 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		5C6DAC01200477B700C3AC44 /* PhotographerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotographerTableViewCell.swift; sourceTree = "<group>"; };
 		5C6DAC032004782200C3AC44 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		5C6DAC052004895600C3AC44 /* Exif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exif.swift; sourceTree = "<group>"; };
 		5C8B05BF2003BEC900BDC9F5 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		5C8B05C12003C14600BDC9F5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 		5C6B9E631FFFCA0E00D51494 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5C6DAC052004895600C3AC44 /* Exif.swift */,
 				5C6B9E751FFFF9E900D51494 /* Photo.swift */,
 				5C6B9E812000169000D51494 /* User.swift */,
 			);
@@ -328,6 +331,7 @@
 				5C6B9E6F1FFFCB1700D51494 /* HTTP.swift in Sources */,
 				5C6B9E822000169000D51494 /* User.swift in Sources */,
 				5C6B9EA22003B9F400D51494 /* PhotoListCollectionViewCell.swift in Sources */,
+				5C6DAC062004895600C3AC44 /* Exif.swift in Sources */,
 				5C6B9E802000005B00D51494 /* PhotoService.swift in Sources */,
 				5C6B9E741FFFCDA900D51494 /* Decoder+Extensions.swift in Sources */,
 				5C6B9E711FFFCCDA00D51494 /* Result.swift in Sources */,

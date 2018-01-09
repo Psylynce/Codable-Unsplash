@@ -13,9 +13,15 @@ final class PhotoDetailViewController: UIViewController {
     enum Section {
         case photo(Photo)
         case photographer(User)
+        case exif(Exif)
 
         var title: String? {
-            return nil
+            switch self {
+            case .exif:
+                return "Camera Information"
+            default:
+                return nil
+            }
         }
     }
 
@@ -55,6 +61,10 @@ final class PhotoDetailViewController: UIViewController {
         self.photo = photo
 
         sections = [.photo(photo), .photographer(photo.user)]
+
+        if let exif = photo.exif {
+            sections.append(.exif(exif))
+        }
     }
 
     private func setupAppearance() {
@@ -73,7 +83,12 @@ extension PhotoDetailViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 // Update when we have more sections for exif and location and more info
+        switch sections[section] {
+        case let .exif(exif):
+            return exif.rows.count
+        default:
+            return 1
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -91,6 +106,13 @@ extension PhotoDetailViewController: UITableViewDataSource {
             photographerCell.configure(with: user)
 
             cell = photographerCell
+        case let .exif(exif):
+            let exifCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+            let exifRow = exif.rows[indexPath.row]
+            exifCell.textLabel?.text = exifRow.title
+            exifCell.detailTextLabel?.text = exifRow.value
+
+            cell = exifCell
         }
 
         return cell
@@ -108,5 +130,9 @@ extension PhotoDetailViewController: UITableViewDelegate {
         default:
             return UITableViewAutomaticDimension
         }
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section].title
     }
 }
