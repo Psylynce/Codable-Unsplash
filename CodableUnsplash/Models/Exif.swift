@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct Exif: Codable {
-    let make: String?
-    let model: String?
-    let exposure: String?
-    let aperture: String?
-    let focalLength: String?
-    let iso: Int?
+public struct Exif: Codable {
+    public let make: String?
+    public let model: String?
+    public let exposure: String?
+    public let aperture: String?
+    public let focalLength: String?
+    public let iso: Int?
 
     enum CodingKeys: String, CodingKey {
         case make
@@ -26,47 +26,9 @@ struct Exif: Codable {
     }
 }
 
-enum ExifRow {
-    case make(String)
-    case model(String)
-    case exposure(String)
-    case aperture(String)
-    case focalLength(String)
-    case iso(String)
-
-    var title: String {
-        switch self {
-        case .make:
-            return "Make"
-        case .model:
-            return "Model"
-        case .exposure:
-            return "Exposure"
-        case .aperture:
-            return "Aperture"
-        case .focalLength:
-            return "Focal Length"
-        case .iso:
-            return "ISO"
-        }
-    }
-
-    var value: String {
-        switch self {
-        case let .make(make):
-            return make
-        case let .model(model):
-            return model
-        case let .exposure(exposure):
-            return "\(exposure) s"
-        case let .aperture(aperture):
-            return "f/\(aperture)"
-        case let .focalLength(focalLength):
-            return "\(focalLength) mm"
-        case let .iso(iso):
-            return iso
-        }
-    }
+public struct ExifRow {
+    public let title: String
+    public let value: String
 }
 
 extension Exif {
@@ -74,27 +36,27 @@ extension Exif {
         var newRows = [ExifRow]()
 
         if let make = make {
-            newRows.append(.make(make))
+            newRows.append(ExifRow(title: "Make", value: make))
         }
 
         if let model = model {
-            newRows.append(.model(model))
+            newRows.append(ExifRow(title: "Model", value: model))
         }
 
         if let exposure = exposure {
-            newRows.append(.exposure(exposure))
+            newRows.append(ExifRow(title: "Exposure", value: exposure))
         }
 
         if let aperture = aperture {
-            newRows.append(.aperture(aperture))
+            newRows.append(ExifRow(title: "Aperture", value: aperture))
         }
 
         if let focalLength = focalLength {
-            newRows.append(.focalLength(focalLength))
+            newRows.append(ExifRow(title: "Focal Length", value: focalLength))
         }
 
         if let iso = iso {
-            newRows.append(.iso("\(iso)"))
+            newRows.append(ExifRow(title: "ISO", value: "\(iso)"))
         }
 
         return newRows
