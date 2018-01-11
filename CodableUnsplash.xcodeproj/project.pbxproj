@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C307197200801CA0096D9BF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C307196200801CA0096D9BF /* Location.swift */; };
 		5C6B9E521FFFC3D100D51494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E511FFFC3D100D51494 /* AppDelegate.swift */; };
 		5C6B9E541FFFC3D100D51494 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E531FFFC3D100D51494 /* PhotosViewController.swift */; };
 		5C6B9E571FFFC3D100D51494 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6B9E551FFFC3D100D51494 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C307196200801CA0096D9BF /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5C6B9E4E1FFFC3D100D51494 /* CodableUnsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodableUnsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6B9E511FFFC3D100D51494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C6B9E531FFFC3D100D51494 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				5C6DAC052004895600C3AC44 /* Exif.swift */,
+				5C307196200801CA0096D9BF /* Location.swift */,
 				5C6B9E751FFFF9E900D51494 /* Photo.swift */,
 				5C6B9E812000169000D51494 /* User.swift */,
 			);
@@ -336,6 +339,7 @@
 				5C6B9E741FFFCDA900D51494 /* Decoder+Extensions.swift in Sources */,
 				5C6B9E711FFFCCDA00D51494 /* Result.swift in Sources */,
 				5C6DAC02200477B700C3AC44 /* PhotographerTableViewCell.swift in Sources */,
+				5C307197200801CA0096D9BF /* Location.swift in Sources */,
 				5C6B9EA52003BA5800D51494 /* ReusableView.swift in Sources */,
 				5C6DAC042004782200C3AC44 /* PhotoTableViewCell.swift in Sources */,
 				5C6B9E7A1FFFFC0800D51494 /* Service.swift in Sources */,

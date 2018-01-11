@@ -37,14 +37,14 @@ struct Photo: Codable {
     let width, height: Int
     let color: String
     let description: String?
-//    let categories: [JSONAny]
     let urls: URLS
     let links: Links
-    let likedByUser, sponsored: Bool
+    let likedByUser: Bool
+    let sponsored: Bool?
     let likes: Int
     let user: User
     let exif: Exif?
-//    let currentUserCollections: [JSONAny]
+    let location: Location?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -53,7 +53,6 @@ struct Photo: Codable {
         case width, height
         case color
         case description
-//        case categories
         case urls
         case links
         case likedByUser = "liked_by_user"
@@ -61,6 +60,6 @@ struct Photo: Codable {
         case likes
         case user
         case exif
-//        case currentUserCollections = "current_user_collections"
+        case location
     }
 }
