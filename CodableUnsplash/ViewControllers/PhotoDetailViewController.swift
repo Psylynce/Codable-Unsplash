@@ -13,10 +13,13 @@ final class PhotoDetailViewController: UIViewController {
     enum Section {
         case photo(Photo)
         case photographer(User)
+        case location(Location)
         case exif(Exif)
 
         var title: String? {
             switch self {
+            case .location:
+                return "Location"
             case .exif:
                 return "Camera Information"
             default:
@@ -62,7 +65,11 @@ final class PhotoDetailViewController: UIViewController {
 
         sections = [.photo(photo), .photographer(photo.user)]
 
-        if let exif = photo.exif {
+        if let location = photo.location {
+            sections.append(.location(location))
+        }
+
+        if let exif = photo.exif, exif.rows.isEmpty == false {
             sections.append(.exif(exif))
         }
     }
@@ -84,6 +91,8 @@ extension PhotoDetailViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch sections[section] {
+        case let .location(location):
+            return location.rows.count
         case let .exif(exif):
             return exif.rows.count
         default:
@@ -106,6 +115,13 @@ extension PhotoDetailViewController: UITableViewDataSource {
             photographerCell.configure(with: user)
 
             cell = photographerCell
+        case let .location(location):
+            let locationCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+            let exifRow = location.rows[indexPath.row]
+            locationCell.textLabel?.text = exifRow.title
+            locationCell.detailTextLabel?.text = exifRow.value
+
+            cell = locationCell
         case let .exif(exif):
             let exifCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
             let exifRow = exif.rows[indexPath.row]
@@ -120,6 +136,17 @@ extension PhotoDetailViewController: UITableViewDataSource {
 }
 
 extension PhotoDetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch sections[indexPath.section] {
+        case let .photographer(user):
+            let vc = UserProfileViewController.viewController
+            vc.user = user
+            show(vc, sender: self)
+        default:
+            return
+        }
+    }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let section = sections[indexPath.section]
 

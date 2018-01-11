@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C307197200801CA0096D9BF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C307196200801CA0096D9BF /* Location.swift */; };
+		5C30719B200818ED0096D9BF /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30719A200818ED0096D9BF /* UserProfileViewController.swift */; };
 		5C6B9E521FFFC3D100D51494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E511FFFC3D100D51494 /* AppDelegate.swift */; };
 		5C6B9E541FFFC3D100D51494 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E531FFFC3D100D51494 /* PhotosViewController.swift */; };
 		5C6B9E571FFFC3D100D51494 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6B9E551FFFC3D100D51494 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		5C307196200801CA0096D9BF /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		5C30719A200818ED0096D9BF /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		5C6B9E4E1FFFC3D100D51494 /* CodableUnsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodableUnsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6B9E511FFFC3D100D51494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C6B9E531FFFC3D100D51494 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				5C6B9E531FFFC3D100D51494 /* PhotosViewController.swift */,
 				5C6DABFF2004191C00C3AC44 /* PhotoDetailViewController.swift */,
+				5C30719A200818ED0096D9BF /* UserProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C6B9E6B1FFFCAB100D51494 /* APIRequestOperation.swift in Sources */,
+				5C30719B200818ED0096D9BF /* UserProfileViewController.swift in Sources */,
 				5C6DAC002004191C00C3AC44 /* PhotoDetailViewController.swift in Sources */,
 				5C6B9E7E1FFFFDFE00D51494 /* PhotoEndpoints.swift in Sources */,
 				5C6B9E541FFFC3D100D51494 /* PhotosViewController.swift in Sources */,

@@ -21,3 +21,20 @@ public struct Location: Codable {
     public let country: String
     public let position: Position
 }
+
+extension Location {
+    var rows: [ExifRow] {
+        var newRows = [ExifRow]()
+
+        newRows.append(ExifRow(title: "Name", value: name))
+        newRows.append(ExifRow(title: "Title", value: title))
+        if let city = city {
+            newRows.append(ExifRow(title: "City", value: city))
+        }
+        newRows.append(ExifRow(title: "Country", value: country))
+        newRows.append(ExifRow(title: "Latitude", value: "\(position.latitude)"))
+        newRows.append(ExifRow(title: "Longitude", value: "\(position.longitude)"))
+
+        return newRows
+    }
+}
