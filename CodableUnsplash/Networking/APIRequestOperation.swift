@@ -50,7 +50,11 @@ final class APIRequestOperation<Model: Decodable>: Operation {
                 DispatchQueue.main.async {
                     strongSelf.completion?(.failure(error))
                 }
-                print("NetworkOperation Network Error: \(error)")
+                print("""
+                    NetworkOperation Network Error: \(error)
+
+                    Enpoint: \(strongSelf.endpoint.description)
+                    """)
                 strongSelf.isFinished = true
                 return
             }
@@ -66,7 +70,7 @@ final class APIRequestOperation<Model: Decodable>: Operation {
                 print("""
                     Error decoding \(Model.self): \(error)
 
-                    Operation Endpoint: \(String(describing: strongSelf.endpoint))
+                    Endpoint: \(strongSelf.endpoint.description)
                     """)
                 DispatchQueue.main.async {
                     strongSelf.completion?(.failure(error))

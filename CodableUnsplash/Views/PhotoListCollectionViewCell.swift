@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 final class PhotoListCollectionViewCell: CardCollectionViewCell {
 
@@ -28,8 +27,8 @@ final class PhotoListCollectionViewCell: CardCollectionViewCell {
     }
 
     func configure(with photo: Photo) {
-        photoImageView.backgroundColor = UIColor(hex: photo.color)
-        photoImageView.kf.setImage(with: photo.urls.regular)
+        photoImageView.backgroundColor = photo.backgroundColor
+        photoImageView.kf.setImage(with: photo.urls.regular, options: [.transition(.fade(0.3))])
         photographerNameLabel.text = photo.user.name
     }
 }

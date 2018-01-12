@@ -13,6 +13,7 @@ final class PhotoTableViewCell: UITableViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
 
     func configure(with photo: Photo) {
-        photoImageView.kf.setImage(with: photo.urls.regular)
+        photoImageView.backgroundColor = photo.backgroundColor
+        photoImageView.kf.setImage(with: photo.urls.regular, options: [.transition(.fade(0.3))])
     }
 }

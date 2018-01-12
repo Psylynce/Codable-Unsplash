@@ -72,3 +72,15 @@ class APIEndpoint {
         return request
     }
 }
+
+extension APIEndpoint {
+    var description: String {
+        return """
+        \(String(describing: self)):
+
+        Method: \(httpMethod.rawValue)
+        Host: \(host)
+        Path: \(path)
+        """
+    }
+}

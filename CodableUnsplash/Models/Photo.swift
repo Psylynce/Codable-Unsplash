@@ -6,7 +6,7 @@
 //  Copyright © 2018 Justin Powell. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Photo: Codable {
 
@@ -61,5 +61,11 @@ struct Photo: Codable {
         case user
         case exif
         case location
+    }
+}
+
+extension Photo {
+    var backgroundColor: UIColor {
+        return UIColor(hex: color)
     }
 }
