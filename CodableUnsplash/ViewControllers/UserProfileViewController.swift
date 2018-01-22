@@ -12,12 +12,6 @@ final class UserProfileViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
 
-    class var viewController: UserProfileViewController {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: self)) as! UserProfileViewController
-
-        return viewController
-    }
-
     var user: User?
 
     override func viewDidLoad() {

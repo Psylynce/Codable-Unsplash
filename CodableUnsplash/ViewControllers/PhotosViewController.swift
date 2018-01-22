@@ -58,7 +58,7 @@ extension PhotosViewController: UICollectionViewDataSource {
 extension PhotosViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let photo = photos[indexPath.item]
-        let vc = PhotoDetailViewController.viewController
+        let vc: PhotoDetailViewController = Storyboard.main.instantiate(viewController: PhotoDetailViewController.self)
         vc.configure(with: photo)
         show(vc, sender: self)
     }

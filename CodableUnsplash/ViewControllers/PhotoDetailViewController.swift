@@ -34,12 +34,6 @@ final class PhotoDetailViewController: UIViewController {
     private var photo: Photo?
     private let photoService = PhotoService()
 
-    class var viewController: PhotoDetailViewController {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: self)) as! PhotoDetailViewController
-
-        return viewController
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -139,7 +133,7 @@ extension PhotoDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch sections[indexPath.section] {
         case let .photographer(user):
-            let vc = UserProfileViewController.viewController
+            let vc = Storyboard.main.instantiate(viewController: UserProfileViewController.self)
             vc.user = user
             show(vc, sender: self)
         default:
