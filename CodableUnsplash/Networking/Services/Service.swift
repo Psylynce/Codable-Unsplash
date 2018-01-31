@@ -23,7 +23,7 @@ class Service {
 
     let queue: OperationQueue
 
-    init(queue: OperationQueue) {
+    init(queue: OperationQueue = ServiceQueue.queue) {
         self.queue = queue
     }
 }
