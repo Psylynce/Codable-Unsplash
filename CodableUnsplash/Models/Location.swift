@@ -23,17 +23,17 @@ public struct Location: Codable {
 }
 
 extension Location {
-    var rows: [ExifRow] {
-        var newRows = [ExifRow]()
+    var rows: [TitleValueRow] {
+        var newRows = [TitleValueRow]()
 
-        newRows.append(ExifRow(title: "Name", value: name))
-        newRows.append(ExifRow(title: "Title", value: title))
+        newRows.append(TitleValueRow(title: "Name", value: name))
+        newRows.append(TitleValueRow(title: "Title", value: title))
         if let city = city {
-            newRows.append(ExifRow(title: "City", value: city))
+            newRows.append(TitleValueRow(title: "City", value: city))
         }
-        newRows.append(ExifRow(title: "Country", value: country))
-        newRows.append(ExifRow(title: "Latitude", value: "\(position.latitude)"))
-        newRows.append(ExifRow(title: "Longitude", value: "\(position.longitude)"))
+        newRows.append(TitleValueRow(title: "Country", value: country))
+        newRows.append(TitleValueRow(title: "Latitude", value: "\(position.latitude)"))
+        newRows.append(TitleValueRow(title: "Longitude", value: "\(position.longitude)"))
 
         return newRows
     }

@@ -100,27 +100,27 @@ extension PhotoDetailViewController: UITableViewDataSource {
         var cell: UITableViewCell
         switch section {
         case let .photo(photo):
-            let photoCell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.reuseIdentifier, for: indexPath) as! PhotoTableViewCell
+            let photoCell: PhotoTableViewCell = tableView.dequeueCell(for: indexPath)
             photoCell.configure(with: photo)
 
             cell = photoCell
         case let .photographer(user):
-            let photographerCell = tableView.dequeueReusableCell(withIdentifier: PhotographerTableViewCell.reuseIdentifier, for: indexPath) as! PhotographerTableViewCell
+            let photographerCell: PhotographerTableViewCell = tableView.dequeueCell(for: indexPath)
             photographerCell.configure(with: user)
 
             cell = photographerCell
         case let .location(location):
             let locationCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
-            let exifRow = location.rows[indexPath.row]
-            locationCell.textLabel?.text = exifRow.title
-            locationCell.detailTextLabel?.text = exifRow.value
+            let row = location.rows[indexPath.row]
+            locationCell.textLabel?.text = row.title
+            locationCell.detailTextLabel?.text = row.value
 
             cell = locationCell
         case let .exif(exif):
             let exifCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
-            let exifRow = exif.rows[indexPath.row]
-            exifCell.textLabel?.text = exifRow.title
-            exifCell.detailTextLabel?.text = exifRow.value
+            let row = exif.rows[indexPath.row]
+            exifCell.textLabel?.text = row.title
+            exifCell.detailTextLabel?.text = row.value
 
             cell = exifCell
         }

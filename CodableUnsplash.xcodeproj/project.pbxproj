@@ -36,6 +36,9 @@
 		5C6DAC02200477B700C3AC44 /* PhotographerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DAC01200477B700C3AC44 /* PhotographerTableViewCell.swift */; };
 		5C6DAC042004782200C3AC44 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DAC032004782200C3AC44 /* PhotoTableViewCell.swift */; };
 		5C6DAC062004895600C3AC44 /* Exif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DAC052004895600C3AC44 /* Exif.swift */; };
+		5C73ECEC20322CA300CAF1CE /* TitleValueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C73ECEB20322CA300CAF1CE /* TitleValueRow.swift */; };
+		5C73ECEE20323A0900CAF1CE /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C73ECED20323A0900CAF1CE /* UICollectionView+Extensions.swift */; };
+		5C73ECF020323AD600CAF1CE /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C73ECEF20323AD600CAF1CE /* UITableView+Extensions.swift */; };
 		5C8B05C02003BEC900BDC9F5 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8B05BF2003BEC900BDC9F5 /* UIColor+Extensions.swift */; };
 		5C8B05C22003C14600BDC9F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8B05C12003C14600BDC9F5 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +75,9 @@
 		5C6DAC01200477B700C3AC44 /* PhotographerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotographerTableViewCell.swift; sourceTree = "<group>"; };
 		5C6DAC032004782200C3AC44 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		5C6DAC052004895600C3AC44 /* Exif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exif.swift; sourceTree = "<group>"; };
+		5C73ECEB20322CA300CAF1CE /* TitleValueRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueRow.swift; sourceTree = "<group>"; };
+		5C73ECED20323A0900CAF1CE /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		5C73ECEF20323AD600CAF1CE /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		5C8B05BF2003BEC900BDC9F5 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		5C8B05C12003C14600BDC9F5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -138,6 +144,7 @@
 				5C307196200801CA0096D9BF /* Location.swift */,
 				5C6B9E751FFFF9E900D51494 /* Photo.swift */,
 				5C6B9E812000169000D51494 /* User.swift */,
+				5C73ECEB20322CA300CAF1CE /* TitleValueRow.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +197,8 @@
 			children = (
 				5C6B9E731FFFCDA900D51494 /* Decoder+Extensions.swift */,
 				5C8B05BF2003BEC900BDC9F5 /* UIColor+Extensions.swift */,
+				5C73ECED20323A0900CAF1CE /* UICollectionView+Extensions.swift */,
+				5C73ECEF20323AD600CAF1CE /* UITableView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -350,9 +359,11 @@
 				5C6B9E822000169000D51494 /* User.swift in Sources */,
 				5C6B9EA22003B9F400D51494 /* PhotoListCollectionViewCell.swift in Sources */,
 				5C6DAC062004895600C3AC44 /* Exif.swift in Sources */,
+				5C73ECEC20322CA300CAF1CE /* TitleValueRow.swift in Sources */,
 				5C6B9E802000005B00D51494 /* PhotoService.swift in Sources */,
 				5C6B9E741FFFCDA900D51494 /* Decoder+Extensions.swift in Sources */,
 				5C6B9E711FFFCCDA00D51494 /* Result.swift in Sources */,
+				5C73ECF020323AD600CAF1CE /* UITableView+Extensions.swift in Sources */,
 				5C6DAC02200477B700C3AC44 /* PhotographerTableViewCell.swift in Sources */,
 				5C307197200801CA0096D9BF /* Location.swift in Sources */,
 				5C6B9EA52003BA5800D51494 /* ReusableView.swift in Sources */,
@@ -361,6 +372,7 @@
 				5C6B9E6D1FFFCABF00D51494 /* Operation.swift in Sources */,
 				5C6B9E521FFFC3D100D51494 /* AppDelegate.swift in Sources */,
 				5C30719E200967B00096D9BF /* Storyboard.swift in Sources */,
+				5C73ECEE20323A0900CAF1CE /* UICollectionView+Extensions.swift in Sources */,
 				5C8B05C02003BEC900BDC9F5 /* UIColor+Extensions.swift in Sources */,
 				5C6DABFE2003DD0000C3AC44 /* CardCollectionViewCell.swift in Sources */,
 				5C6B9E7C1FFFFC3E00D51494 /* UnsplashEndpoint.swift in Sources */,

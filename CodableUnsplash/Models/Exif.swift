@@ -26,37 +26,32 @@ public struct Exif: Codable {
     }
 }
 
-public struct ExifRow {
-    public let title: String
-    public let value: String
-}
-
 extension Exif {
-    var rows: [ExifRow] {
-        var newRows = [ExifRow]()
+    var rows: [TitleValueRow] {
+        var newRows = [TitleValueRow]()
 
         if let make = make {
-            newRows.append(ExifRow(title: "Make", value: make))
+            newRows.append(TitleValueRow(title: "Make", value: make))
         }
 
         if let model = model {
-            newRows.append(ExifRow(title: "Model", value: model))
+            newRows.append(TitleValueRow(title: "Model", value: model))
         }
 
         if let exposure = exposure {
-            newRows.append(ExifRow(title: "Exposure", value: exposure))
+            newRows.append(TitleValueRow(title: "Exposure", value: exposure))
         }
 
         if let aperture = aperture {
-            newRows.append(ExifRow(title: "Aperture", value: aperture))
+            newRows.append(TitleValueRow(title: "Aperture", value: aperture))
         }
 
         if let focalLength = focalLength {
-            newRows.append(ExifRow(title: "Focal Length", value: focalLength))
+            newRows.append(TitleValueRow(title: "Focal Length", value: focalLength))
         }
 
         if let iso = iso {
-            newRows.append(ExifRow(title: "ISO", value: "\(iso)"))
+            newRows.append(TitleValueRow(title: "ISO", value: "\(iso)"))
         }
 
         return newRows
