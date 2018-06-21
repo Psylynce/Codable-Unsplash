@@ -1,10 +1,10 @@
 //
-//  AppDelegate.swift
-//  Kingfisher-macOS-Demo
+//  InterfaceController.swift
+//  Kingfisher-watchOS-Demo Extension
 //
-//  Created by Wei Wang on 16/1/6.
+//  Created by Wei Wang on 16/1/19.
 //
-//  Copyright (c) 2017 Wei Wang <onevcat@gmail.com>
+//  Copyright (c) 2018 Wei Wang <onevcat@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,21 +24,41 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import Cocoa
+
+import WatchKit
+import Foundation
 import Kingfisher
 
-@NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+var count = 0
 
-
-
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+class InterfaceController: WKInterfaceController {
+    
+    @IBOutlet var interfaceImage: WKInterfaceImage!
+    
+    var currentIndex: Int?
+    
+    
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
+        
+        currentIndex = count
+        count += 1
+    }
+    
+    func refreshImage() {
+        let url = URL(string: "https://raw.githubusercontent.com/onevcat/Kingfisher/master/images/kingfisher-\(currentIndex! + 1).jpg")!
+        self.interfaceImage.kf.setImage(url)
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
+    override func willActivate() {
+        // This method is called when watch view controller is about to be visible to user
+        super.willActivate()
+        refreshImage()
     }
 
+    override func didDeactivate() {
+        // This method is called when watch view controller is no longer visible
+        super.didDeactivate()
+    }
 
 }

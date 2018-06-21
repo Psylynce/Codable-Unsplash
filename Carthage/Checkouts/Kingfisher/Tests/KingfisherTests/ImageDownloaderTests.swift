@@ -4,7 +4,7 @@
 //
 //  Created by Wei Wang on 15/4/10.
 //
-//  Copyright (c) 2017 Wei Wang <onevcat@gmail.com>
+//  Copyright (c) 2018 Wei Wang <onevcat@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -271,6 +271,48 @@ class ImageDownloaderTests: XCTestCase {
         downloadTask!.cancel()
         _ = stub!.go()
         
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testCancelAllDownloadTasks() {
+        let expectation = self.expectation(description: "wait for downloading")
+        let URLString1 = testKeys[0]
+        let stub1 = stubRequest("GET", URLString1).andReturn(200)?.withBody(testImageData)?.delay()
+        let url1 = URL(string: URLString1)!
+        
+        let URLString2 = testKeys[1]
+        let stub2 = stubRequest("GET", URLString2).andReturn(200)?.withBody(testImageData)?.delay()
+        let url2 = URL(string: URLString2)!
+        
+        let group = DispatchGroup()
+        
+        group.enter()
+        let _ = downloader.downloadImage(with: url1) { _, error, _, _ in
+            XCTAssertNotNil(error)
+            XCTAssertEqual(error?.code, NSURLErrorCancelled)
+            group.leave()
+        }
+        
+        group.enter()
+        let _ = downloader.downloadImage(with: url1) { _, error, _, _ in
+            XCTAssertNotNil(error)
+            XCTAssertEqual(error?.code, NSURLErrorCancelled)
+            group.leave()
+        }
+        
+        group.enter()
+        let _ = downloader.downloadImage(with: url2) { _, error, _, _ in
+            XCTAssertNotNil(error)
+            XCTAssertEqual(error?.code, NSURLErrorCancelled)
+            group.leave()
+        }
+        
+        delay(0.1) {
+            self.downloader.cancelAll()
+            _ = stub1!.go()
+            _ = stub2!.go()
+        }
+        group.notify(queue: .main, execute: expectation.fulfill)
         waitForExpectations(timeout: 5, handler: nil)
     }
     

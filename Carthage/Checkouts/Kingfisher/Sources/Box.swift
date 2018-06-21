@@ -1,10 +1,9 @@
 //
-//  CollectionViewCell.swift
-//  Kingfisher-Demo
+//  Box.swift
+//  Kingfisher
 //
-//  Created by Wei Wang on 15/4/6.
-//
-//  Copyright (c) 2017 Wei Wang <onevcat@gmail.com>
+//  Created by Wei Wang on 2018/3/17.
+//  Copyright (c) 2018 Wei Wang <onevcat@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,18 +23,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import UIKit
+import Foundation
 
-class CollectionViewCell: UICollectionViewCell {
+class Box<T> {
+    let value: T
     
-    @IBOutlet weak var cellImageView: UIImageView!
-    
-    #if os(tvOS)
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
-        cellImageView.adjustsImageWhenAncestorFocused = true
-        cellImageView.clipsToBounds = false
+    init(_ value: T) {
+        self.value = value
     }
-    #endif
 }

@@ -1,10 +1,10 @@
 //
-//  ExtensionDelegate.swift
-//  Kingfisher-watchOS-Demo Extension
+//  AppDelegate.swift
+//  Kingfisher-macOS-Demo
 //
-//  Created by Wei Wang on 16/1/19.
+//  Created by Wei Wang on 16/1/6.
 //
-//  Copyright (c) 2017 Wei Wang <onevcat@gmail.com>
+//  Copyright (c) 2018 Wei Wang <onevcat@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,21 +24,21 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import WatchKit
+import Cocoa
+import Kingfisher
 
-class ExtensionDelegate: NSObject, WKExtensionDelegate {
+@NSApplicationMain
+class AppDelegate: NSObject, NSApplicationDelegate {
 
-    func applicationDidFinishLaunching() {
-        // Perform any final initialization of your application.
+
+
+    func applicationDidFinishLaunching(aNotification: NSNotification) {
+        // Insert code here to initialize your application
     }
 
-    func applicationDidBecomeActive() {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    func applicationWillTerminate(aNotification: NSNotification) {
+        // Insert code here to tear down your application
     }
 
-    func applicationWillResignActive() {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, etc.
-    }
 
 }

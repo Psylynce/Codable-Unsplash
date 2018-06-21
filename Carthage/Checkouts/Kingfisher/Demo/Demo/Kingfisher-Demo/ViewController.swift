@@ -4,7 +4,7 @@
 //
 //  Created by Wei Wang on 15/4/6.
 //
-//  Copyright (c) 2017 Wei Wang <onevcat@gmail.com>
+//  Copyright (c) 2018 Wei Wang <onevcat@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -81,19 +81,29 @@ extension ViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
-    
         cell.cellImageView.kf.indicatorType = .activity
-        
         return cell
     }
 }
 
 extension ViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        let urls = indexPaths.flatMap {
+        let urls = indexPaths.compactMap {
             URL(string: "https://raw.githubusercontent.com/onevcat/Kingfisher/master/images/kingfisher-\($0.row + 1).jpg")
         }
         
         ImagePrefetcher(urls: urls).start()
     }
 }
+
+
+// Inspired by: https://fdp.io/blog/2018/03/22/supporting-compactmap-in-swift-4/
+#if swift(>=4.1)
+    // This is provided by the stdlib
+#else
+    extension Sequence {
+        func compactMap<T>(_ transform: (Self.Element) throws -> T?) rethrows -> [T] {
+            return try flatMap(transform)
+        }
+    }
+#endif

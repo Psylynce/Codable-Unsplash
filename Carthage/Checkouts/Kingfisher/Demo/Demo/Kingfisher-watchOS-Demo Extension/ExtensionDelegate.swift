@@ -1,10 +1,10 @@
 //
-//  InterfaceController.swift
+//  ExtensionDelegate.swift
 //  Kingfisher-watchOS-Demo Extension
 //
 //  Created by Wei Wang on 16/1/19.
 //
-//  Copyright (c) 2017 Wei Wang <onevcat@gmail.com>
+//  Copyright (c) 2018 Wei Wang <onevcat@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,43 +24,21 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-
 import WatchKit
-import Foundation
-import Kingfisher
 
-var count = 0
+class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
-class InterfaceController: WKInterfaceController {
-    
-    @IBOutlet var interfaceImage: WKInterfaceImage!
-    
-    var currentIndex: Int?
-    
-    
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
-        
-        currentIndex = count
-        count += 1
-    }
-    
-    func refreshImage() {
-        let url = URL(string: "https://raw.githubusercontent.com/onevcat/Kingfisher/master/images/kingfisher-\(currentIndex! + 1).jpg")!
-        _ = KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil) { (image, error, cacheType, imageURL) -> Void in
-            self.interfaceImage.setImage(image)
-        }
+    func applicationDidFinishLaunching() {
+        // Perform any final initialization of your application.
     }
 
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-        refreshImage()
+    func applicationDidBecomeActive() {
+        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
+    func applicationWillResignActive() {
+        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+        // Use this method to pause ongoing tasks, disable timers, etc.
     }
 
 }
