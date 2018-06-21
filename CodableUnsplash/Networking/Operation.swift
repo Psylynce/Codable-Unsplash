@@ -10,26 +10,36 @@ import Foundation
 
 class Operation: Foundation.Operation {
 
-    fileprivate var _executing = false
-    override open var isExecuting: Bool {
+    enum State: String {
+        case cancelled
+        case executing
+        case finished
+
+        var keyValue: String {
+            return "is" + rawValue.capitalized
+        }
+    }
+
+    private var _executing = false
+    override var isExecuting: Bool {
         get { return _executing }
         set {
             if _executing != newValue {
-                willChangeValue(forKey: "isExecuting")
+                willChangeState(to: .executing)
                 _executing = newValue
-                didChangeValue(forKey: "isExecuting")
+                didChangeState(to: .executing)
             }
         }
     }
 
-    fileprivate var _finished = false
-    override open var isFinished: Bool {
+    private var _finished = false
+    override var isFinished: Bool {
         get { return _finished }
         set {
             if _finished != newValue {
-                willChangeValue(forKey: "isFinished")
+                willChangeState(to: .finished)
                 _finished = newValue
-                didChangeValue(forKey: "isFinished")
+                didChangeState(to: .finished)
 
                 if _finished == true {
                     isExecuting = false
@@ -38,24 +48,24 @@ class Operation: Foundation.Operation {
         }
     }
 
-    fileprivate var _cancelled = false
-    override open var isCancelled: Bool {
+    private var _cancelled = false
+    override var isCancelled: Bool {
         get { return _cancelled }
         set {
             if _cancelled != newValue {
-                willChangeValue(forKey: "isCancelled")
+                willChangeState(to: .cancelled)
                 _cancelled = newValue
-                didChangeValue(forKey: "isCancelled")
+                didChangeState(to: .cancelled)
             }
         }
     }
 
-    override open func cancel() {
+    override func cancel() {
         super.cancel()
         isCancelled = true
     }
 
-    final override public func start() {
+    final override func start() {
         guard isCancelled == false else {
             isFinished = true
             return
@@ -74,5 +84,12 @@ class Operation: Foundation.Operation {
     deinit {
         print("\(self) -- deinit")
     }
-}
 
+    private func willChangeState(to state: State) {
+        willChangeValue(forKey: state.keyValue)
+    }
+
+    private func didChangeState(to state: State) {
+        didChangeValue(forKey: state.keyValue)
+    }
+}
