@@ -11,19 +11,10 @@ import Foundation
 public struct Exif: Codable {
     public let make: String?
     public let model: String?
-    public let exposure: String?
+    public let exposureTime: String?
     public let aperture: String?
     public let focalLength: String?
     public let iso: Int?
-
-    enum CodingKeys: String, CodingKey {
-        case make
-        case model
-        case exposure = "exposure_time"
-        case aperture
-        case focalLength = "focal_length"
-        case iso
-    }
 }
 
 extension Exif {
@@ -38,7 +29,7 @@ extension Exif {
             newRows.append(TitleValueRow(title: "Model", value: model))
         }
 
-        if let exposure = exposure {
+        if let exposure = exposureTime {
             newRows.append(TitleValueRow(title: "Exposure", value: exposure))
         }
 
