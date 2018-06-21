@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PhotoDetailViewControllerDelegate: class {
+    func showUser(_ user: User)
+}
+
 final class PhotoDetailViewController: UIViewController {
 
     enum Section {
@@ -29,6 +33,8 @@ final class PhotoDetailViewController: UIViewController {
     }
 
     @IBOutlet weak var tableView: UITableView!
+
+    weak var delegate: PhotoDetailViewControllerDelegate?
 
     private var sections = [Section]()
     private var photo: Photo?
@@ -133,9 +139,7 @@ extension PhotoDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch sections[indexPath.section] {
         case let .photographer(user):
-            let vc = Storyboard.main.instantiate(viewController: UserProfileViewController.self)
-            vc.user = user
-            show(vc, sender: self)
+            delegate?.showUser(user)
         default:
             return
         }

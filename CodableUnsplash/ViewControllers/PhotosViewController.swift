@@ -10,9 +10,15 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol PhotosViewControllerDelegate: class {
+    func showPhoto(_ photo: Photo)
+}
+
 final class PhotosViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+
+    weak var delegate: PhotosViewControllerDelegate?
 
     private let viewModel = PhotosViewModel()
     private let disposeBag = DisposeBag()
@@ -40,10 +46,7 @@ final class PhotosViewController: UIViewController {
 
 extension PhotosViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let photo = viewModel.photos.value[indexPath.item]
-        let vc = Storyboard.main.instantiate(viewController: PhotoDetailViewController.self)
-        vc.configure(with: photo)
-        show(vc, sender: self)
+        delegate?.showPhoto(viewModel.photos.value[indexPath.item])
     }
 }
 

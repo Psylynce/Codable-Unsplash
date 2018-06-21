@@ -10,7 +10,7 @@ import UIKit
 
 
 enum Storyboard: String {
-    case main = "Main"
+    case photos = "Photos"
 
     func instantiate<T: StoryboardViewController>(viewController: T.Type) -> T {
         return UIStoryboard(name: self.rawValue, bundle: nil).instantiateViewController(withIdentifier: viewController.storyboardIdentifier) as! T

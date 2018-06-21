@@ -15,11 +15,24 @@ final class PhotosCoordinator: Coordinator {
     }
 
     private func embedPhotosViewController() {
-        let photosViewController = Storyboard.main.instantiate(viewController: PhotosViewController.self)
+        let photosViewController = Storyboard.photos.instantiate(viewController: PhotosViewController.self)
+        photosViewController.delegate = self
         rootNavigationController.pushViewController(photosViewController, animated: false)
     }
+}
 
-    private func showPhotoDetails() {
+extension PhotosCoordinator: PhotosViewControllerDelegate {
+    func showPhoto(_ photo: Photo) {
+        let viewController = Storyboard.photos.instantiate(viewController: PhotoDetailViewController.self)
+        viewController.delegate = self
+        viewController.configure(with: photo)
+        rootNavigationController.show(viewController, sender: rootNavigationController)
+    }
+}
 
+extension PhotosCoordinator: PhotoDetailViewControllerDelegate {
+    func showUser(_ user: User) {
+        let coordinator = UserProfileCoordinator(rootNavigationController: rootNavigationController, user: user)
+        coordinator.start()
     }
 }
