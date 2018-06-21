@@ -10,6 +10,9 @@
 		5C307197200801CA0096D9BF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C307196200801CA0096D9BF /* Location.swift */; };
 		5C30719B200818ED0096D9BF /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30719A200818ED0096D9BF /* UserProfileViewController.swift */; };
 		5C30719E200967B00096D9BF /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30719D200967B00096D9BF /* Storyboard.swift */; };
+		5C56464120DC15D5006894A5 /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C56464020DC15D5006894A5 /* PhotosViewModel.swift */; };
+		5C56464320DC1ED7006894A5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C56464220DC1ED7006894A5 /* RxSwift.framework */; };
+		5C56464520DC3455006894A5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C56464420DC3455006894A5 /* RxCocoa.framework */; };
 		5C6B9E521FFFC3D100D51494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E511FFFC3D100D51494 /* AppDelegate.swift */; };
 		5C6B9E541FFFC3D100D51494 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E531FFFC3D100D51494 /* PhotosViewController.swift */; };
 		5C6B9E571FFFC3D100D51494 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6B9E551FFFC3D100D51494 /* Main.storyboard */; };
@@ -47,6 +50,9 @@
 		5C307196200801CA0096D9BF /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5C30719A200818ED0096D9BF /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		5C30719D200967B00096D9BF /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		5C56464020DC15D5006894A5 /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
+		5C56464220DC1ED7006894A5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		5C56464420DC3455006894A5 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		5C6B9E4E1FFFC3D100D51494 /* CodableUnsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodableUnsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6B9E511FFFC3D100D51494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C6B9E531FFFC3D100D51494 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +93,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C56464520DC3455006894A5 /* RxCocoa.framework in Frameworks */,
+				5C56464320DC1ED7006894A5 /* RxSwift.framework in Frameworks */,
 				5C8B05C22003C14600BDC9F5 /* QuartzCore.framework in Frameworks */,
 				5C6B9E9D2003B7F200D51494 /* Kingfisher.framework in Frameworks */,
 			);
@@ -101,6 +109,14 @@
 				5C30719D200967B00096D9BF /* Storyboard.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5C56463F20DC15B5006894A5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5C56464020DC15D5006894A5 /* PhotosViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		5C6B9E451FFFC3D100D51494 = {
@@ -132,6 +148,7 @@
 				5C6B9E661FFFCA3A00D51494 /* Storyboards */,
 				5C6B9E671FFFCA5500D51494 /* Supporting Files */,
 				5C6B9E9F2003B9C200D51494 /* Views */,
+				5C56463F20DC15B5006894A5 /* ViewModels */,
 				5C6B9E651FFFCA2500D51494 /* ViewControllers */,
 			);
 			path = CodableUnsplash;
@@ -224,6 +241,8 @@
 		5C6B9E9B2003B7F100D51494 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5C56464420DC3455006894A5 /* RxCocoa.framework */,
+				5C56464220DC1ED7006894A5 /* RxSwift.framework */,
 				5C8B05C12003C14600BDC9F5 /* QuartzCore.framework */,
 				5C6B9E9C2003B7F100D51494 /* Kingfisher.framework */,
 			);
@@ -334,6 +353,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 			);
 			outputPaths = (
 			);
@@ -370,6 +391,7 @@
 				5C6DAC042004782200C3AC44 /* PhotoTableViewCell.swift in Sources */,
 				5C6B9E7A1FFFFC0800D51494 /* Service.swift in Sources */,
 				5C6B9E6D1FFFCABF00D51494 /* Operation.swift in Sources */,
+				5C56464120DC15D5006894A5 /* PhotosViewModel.swift in Sources */,
 				5C6B9E521FFFC3D100D51494 /* AppDelegate.swift in Sources */,
 				5C30719E200967B00096D9BF /* Storyboard.swift in Sources */,
 				5C73ECEE20323A0900CAF1CE /* UICollectionView+Extensions.swift in Sources */,
