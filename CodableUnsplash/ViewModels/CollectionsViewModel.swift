@@ -11,7 +11,7 @@ import RxSwift
 
 final class CollectionsViewModel {
 
-    var collections = Variable<[Collection]>([])
+    var collections = Variable<[PhotoCollection]>([])
     private let collectionsService = CollectionsService()
 
     func fetchFeaturedCollections(page: Int = 1) {

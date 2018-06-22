@@ -16,7 +16,15 @@ final class CollectionsCoordinator: Coordinator {
 
     private func embedCollectionsViewController() {
         let viewController = Storyboard.collections.instantiate(viewController: CollectionsViewController.self)
-
+        viewController.delegate = self
         rootNavigationController.pushViewController(viewController, animated: false)
+    }
+}
+
+extension CollectionsCoordinator: CollectionsViewControllerDelegate {
+    func showCollection(_ collection: PhotoCollection) {
+        let viewModel = CollectionPhotosViewModel(collection: collection)
+        let coordinator = PhotosCoordinator(rootNavigationController: rootNavigationController, viewModel: viewModel)
+        coordinator.start()
     }
 }

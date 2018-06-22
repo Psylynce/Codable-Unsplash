@@ -1,5 +1,5 @@
 //
-//  Collection.swift
+//  PhotoCollection.swift
 //  CodableUnsplash
 //
 //  Created by Justin Powell on 6/22/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Collection: Codable {
+struct PhotoCollection: Codable {
 
     struct PreviewPhoto: Codable {
         let urls: PhotoURLS

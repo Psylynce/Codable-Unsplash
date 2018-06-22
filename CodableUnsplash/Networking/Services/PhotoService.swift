@@ -10,11 +10,14 @@ import Foundation
 
 final class PhotoService: Service {
 
+    func fetchPhotos(with endpoint: APIEndpoint, completion: ServiceCompletion<[Photo]>?) {
+        let operation = APIRequestOperation<[Photo]>(endpoint: endpoint, completion: completion)
+        queue.addOperation(operation)
+    }
+
     func listPhotos(completion: ServiceCompletion<[Photo]>?) {
         let endpoint = PhotoEndpoint.listPhotos
-        let operation = APIRequestOperation<[Photo]>(endpoint: endpoint, completion: completion)
-
-        queue.addOperation(operation)
+        fetchPhotos(with: endpoint, completion: completion)
     }
 
     func fetchPhoto(id: String, completion: ServiceCompletion<Photo>?) {

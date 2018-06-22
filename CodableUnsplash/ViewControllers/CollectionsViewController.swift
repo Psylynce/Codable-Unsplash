@@ -10,9 +10,15 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol CollectionsViewControllerDelegate: class {
+    func showCollection(_ collection: PhotoCollection)
+}
+
 final class CollectionsViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
+
+    weak var delegate: CollectionsViewControllerDelegate?
     
     private let viewModel = CollectionsViewModel()
     private let disposeBag = DisposeBag()
@@ -37,7 +43,9 @@ final class CollectionsViewController: UIViewController {
 }
 
 extension CollectionsViewController: UICollectionViewDelegate {
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.showCollection(viewModel.collections.value[indexPath.item])
+    }
 }
 
 extension CollectionsViewController: UICollectionViewDelegateFlowLayout {

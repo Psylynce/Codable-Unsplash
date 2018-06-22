@@ -24,7 +24,7 @@ final class CollectionOverviewCollectionViewCell: UICollectionViewCell {
         rightImageView.round(corners: .bottomRight)
     }
 
-    func configure(with collection: Collection) {
+    func configure(with collection: PhotoCollection) {
         for i in 0 ..< 3 {
             let photoURL = collection.previewPhotos[i].urls.regular
 

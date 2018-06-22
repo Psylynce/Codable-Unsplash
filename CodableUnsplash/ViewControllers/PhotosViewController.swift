@@ -20,7 +20,8 @@ final class PhotosViewController: UIViewController {
 
     weak var delegate: PhotosViewControllerDelegate?
 
-    private let viewModel = PhotosViewModel()
+    var viewModel: PhotoListViewModel!
+
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
@@ -30,14 +31,13 @@ final class PhotosViewController: UIViewController {
         viewModel.fetchPhotos()
 
         viewModel.photos.asObservable()
-            .bind(to:
-            collectionView.rx.items(cellIdentifier: PhotoListCollectionViewCell.reuseIdentifier, cellType: PhotoListCollectionViewCell.self)) { _, photo, cell in
-                cell.configure(with: photo)
-            }.disposed(by: disposeBag)
+        .bind(to: collectionView.rx.items(cellIdentifier: PhotoListCollectionViewCell.reuseIdentifier, cellType: PhotoListCollectionViewCell.self)) { _, photo, cell in
+            cell.configure(with: photo)
+        }.disposed(by: disposeBag)
     }
 
     private func setupAppearance() {
-        navigationItem.title = "Photos"
+        navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
 
         collectionView.delegate = self

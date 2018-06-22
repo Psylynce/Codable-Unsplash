@@ -9,7 +9,9 @@
 import Foundation
 import RxSwift
 
-final class PhotosViewModel {
+final class PhotosViewModel: PhotoListViewModel {
+
+    var title: String = "Photos"
 
     var photos = Variable<[Photo]>([])
 
@@ -27,5 +29,4 @@ final class PhotosViewModel {
             }
         }
     }
-
 }

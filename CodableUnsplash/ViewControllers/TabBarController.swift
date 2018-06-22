@@ -16,7 +16,7 @@ final class TabBarController: UITabBarController {
     init() {
         let photosNavigationController = UINavigationController()
         photosNavigationController.tabBarItem = UITabBarItem(title: "Photos", image: nil, selectedImage: nil)
-        photosCoordinator = PhotosCoordinator(rootNavigationController: photosNavigationController)
+        photosCoordinator = PhotosCoordinator(rootNavigationController: photosNavigationController, viewModel: PhotosViewModel())
         photosCoordinator.start()
 
         let collectionsNavigationController = UINavigationController()

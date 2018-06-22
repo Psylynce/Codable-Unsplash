@@ -13,4 +13,9 @@ struct CollectionsEndpoints {
         let pageParams = URLQueryItem(name: "page", value: "\(page)")
         return UnsplashEndpoint.configured.path("/collections/featured").queryParameters([pageParams])
     }
+
+    static func fetchCollectionPhotos(id: Int, page: Int = 1) -> APIEndpoint {
+        let pageParams = URLQueryItem(name: "page", value: "\(page)")
+        return UnsplashEndpoint.configured.path("/collections/\(id)/photos").queryParameters([pageParams])
+    }
 }

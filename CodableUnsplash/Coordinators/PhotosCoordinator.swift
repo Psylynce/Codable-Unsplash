@@ -6,18 +6,30 @@
 //  Copyright © 2018 Justin Powell. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class PhotosCoordinator: Coordinator {
 
-    override func start() {
-        embedPhotosViewController()
+    let viewModel: PhotoListViewModel
+
+    init(rootNavigationController: UINavigationController, viewModel: PhotoListViewModel) {
+        self.viewModel = viewModel
+        super.init(rootNavigationController: rootNavigationController)
     }
 
-    private func embedPhotosViewController() {
+    override func start() {
+        if viewModel is PhotosViewModel {
+            showPhotosViewController(animated: false)
+        } else if viewModel is CollectionPhotosViewModel {
+            showPhotosViewController(animated: true)
+        }
+    }
+
+    private func showPhotosViewController(animated: Bool) {
         let photosViewController = Storyboard.photos.instantiate(viewController: PhotosViewController.self)
         photosViewController.delegate = self
-        rootNavigationController.pushViewController(photosViewController, animated: false)
+        photosViewController.viewModel = viewModel
+        rootNavigationController.pushViewController(photosViewController, animated: animated)
     }
 }
 
