@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6jG-tw-pDn">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zFd-AC-xwF">
                                     <size key="itemSize" width="350" height="360"/>
@@ -100,8 +100,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="y96-Tv-UWy" firstAttribute="bottom" secondItem="6jG-tw-pDn" secondAttribute="bottom" id="53h-rh-J6m"/>
-                            <constraint firstItem="6jG-tw-pDn" firstAttribute="top" secondItem="y96-Tv-UWy" secondAttribute="top" id="ABn-zG-ECI"/>
+                            <constraint firstAttribute="bottom" secondItem="6jG-tw-pDn" secondAttribute="bottom" id="53h-rh-J6m"/>
+                            <constraint firstItem="6jG-tw-pDn" firstAttribute="top" secondItem="bJg-PV-JeX" secondAttribute="top" id="ABn-zG-ECI"/>
                             <constraint firstItem="6jG-tw-pDn" firstAttribute="leading" secondItem="y96-Tv-UWy" secondAttribute="leading" id="KSm-ph-Jak"/>
                             <constraint firstItem="y96-Tv-UWy" firstAttribute="trailing" secondItem="6jG-tw-pDn" secondAttribute="trailing" id="OMH-SG-q9a"/>
                         </constraints>

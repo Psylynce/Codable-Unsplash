@@ -12,6 +12,7 @@ import RxCocoa
 
 protocol PhotosViewControllerDelegate: class {
     func showPhoto(_ photo: Photo)
+    func finishedFlow()
 }
 
 final class PhotosViewController: UIViewController {
@@ -34,6 +35,14 @@ final class PhotosViewController: UIViewController {
         .bind(to: collectionView.rx.items(cellIdentifier: PhotoListCollectionViewCell.reuseIdentifier, cellType: PhotoListCollectionViewCell.self)) { _, photo, cell in
             cell.configure(with: photo)
         }.disposed(by: disposeBag)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if isMovingFromParentViewController {
+            delegate?.finishedFlow()
+        }
     }
 
     private func setupAppearance() {

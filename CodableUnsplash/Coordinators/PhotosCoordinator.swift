@@ -17,6 +17,13 @@ final class PhotosCoordinator: Coordinator {
         super.init(rootNavigationController: rootNavigationController)
     }
 
+    convenience init(parent: Coordinator, viewModel: PhotoListViewModel) {
+        self.init(rootNavigationController: parent.rootNavigationController, viewModel: viewModel)
+
+        self.parentCoordinator = parent
+        self.parentCoordinator?.childCoordinators.append(self)
+    }
+
     override func start() {
         if viewModel is PhotosViewModel {
             showPhotosViewController(animated: false)
@@ -39,6 +46,10 @@ extension PhotosCoordinator: PhotosViewControllerDelegate {
         viewController.delegate = self
         viewController.configure(with: photo)
         rootNavigationController.show(viewController, sender: rootNavigationController)
+    }
+
+    func finishedFlow() {
+        complete()
     }
 }
 

@@ -24,7 +24,7 @@ final class CollectionsCoordinator: Coordinator {
 extension CollectionsCoordinator: CollectionsViewControllerDelegate {
     func showCollection(_ collection: PhotoCollection) {
         let viewModel = CollectionPhotosViewModel(collection: collection)
-        let coordinator = PhotosCoordinator(rootNavigationController: rootNavigationController, viewModel: viewModel)
+        let coordinator = PhotosCoordinator(parent: self, viewModel: viewModel)
         coordinator.start()
     }
 }
