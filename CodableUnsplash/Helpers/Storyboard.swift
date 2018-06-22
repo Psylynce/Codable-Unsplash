@@ -10,10 +10,11 @@ import UIKit
 
 
 enum Storyboard: String {
-    case photos = "Photos"
+    case collections
+    case photos
 
     func instantiate<T: StoryboardViewController>(viewController: T.Type) -> T {
-        return UIStoryboard(name: self.rawValue, bundle: nil).instantiateViewController(withIdentifier: viewController.storyboardIdentifier) as! T
+        return UIStoryboard(name: self.rawValue.capitalized, bundle: nil).instantiateViewController(withIdentifier: viewController.storyboardIdentifier) as! T
     }
 }
 
