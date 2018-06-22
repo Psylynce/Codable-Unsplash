@@ -10,14 +10,6 @@ import UIKit
 
 struct Photo: Codable {
 
-    struct URLS: Codable {
-        let raw: URL
-        let full: URL
-        let regular: URL
-        let small: URL
-        let thumb: URL
-    }
-
     struct Links: Codable {
         let html: URL
         let download: URL
@@ -30,7 +22,7 @@ struct Photo: Codable {
     let width, height: Int
     let color: String
     let description: String?
-    let urls: URLS
+    let urls: PhotoURLS
     let links: Links
     let likedByUser: Bool
     let sponsored: Bool?

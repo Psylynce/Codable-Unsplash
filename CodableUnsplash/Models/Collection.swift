@@ -9,10 +9,17 @@
 import Foundation
 
 struct Collection: Codable {
+
+    struct PreviewPhoto: Codable {
+        let urls: PhotoURLS
+    }
+
     let id: Int
     let title: String
     let description: String?
     let publishedAt: Date
     let totalPhotos: Int
     let coverPhoto: Photo
+    let previewPhotos: [PreviewPhoto]
+    let user: User
 }
