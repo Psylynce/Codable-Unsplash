@@ -77,6 +77,9 @@ final class PhotoDetailViewController: UIViewController {
     private func setupAppearance() {
         navigationItem.largeTitleDisplayMode = .never
 
+        let nib = UINib(nibName: "TableSectionHeader", bundle: nil)
+        tableView.register(nib, forHeaderFooterViewReuseIdentifier: TableSectionHeader.reuseIdentifier)
+
         tableView.dataSource = self
         tableView.delegate = self
         tableView.estimatedRowHeight = 100
@@ -119,6 +122,7 @@ extension PhotoDetailViewController: UITableViewDataSource {
             let locationCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
             let row = location.rows[indexPath.row]
             locationCell.textLabel?.text = row.title
+            locationCell.textLabel?.textColor = Colors.gray333
             locationCell.detailTextLabel?.text = row.value
 
             cell = locationCell
@@ -126,6 +130,7 @@ extension PhotoDetailViewController: UITableViewDataSource {
             let exifCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
             let row = exif.rows[indexPath.row]
             exifCell.textLabel?.text = row.title
+            exifCell.textLabel?.textColor = Colors.gray333
             exifCell.detailTextLabel?.text = row.value
 
             cell = exifCell
@@ -143,6 +148,7 @@ extension PhotoDetailViewController: UITableViewDelegate {
         default:
             return
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -157,7 +163,20 @@ extension PhotoDetailViewController: UITableViewDelegate {
         }
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section].title
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return sections[section].title == nil ? 0 : 50
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let title = sections[section].title
+
+        if title == nil {
+            return nil
+        }
+
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: TableSectionHeader.reuseIdentifier) as! TableSectionHeader
+        view.titleLabel.text = title
+
+        return view
     }
 }

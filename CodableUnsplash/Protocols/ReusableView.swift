@@ -18,3 +18,4 @@ extension ReusableView {
 
 extension UICollectionViewCell: ReusableView {}
 extension UITableViewCell: ReusableView {}
+extension UITableViewHeaderFooterView: ReusableView {}

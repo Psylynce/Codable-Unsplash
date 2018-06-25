@@ -29,6 +29,9 @@
 		5C56466520DD5DDB006894A5 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C56466420DD5DDB006894A5 /* UIView+Extensions.swift */; };
 		5C56466720DD64C2006894A5 /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C56466620DD64C2006894A5 /* PhotoListViewModel.swift */; };
 		5C56466920DD65FC006894A5 /* CollectionPhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C56466820DD65FC006894A5 /* CollectionPhotosViewModel.swift */; };
+		5C56467120DD932F006894A5 /* TableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C56467020DD932F006894A5 /* TableSectionHeader.swift */; };
+		5C56467320DD935C006894A5 /* TableSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C56467220DD935C006894A5 /* TableSectionHeader.xib */; };
+		5C56467520DD98E5006894A5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C56467420DD98E5006894A5 /* Colors.swift */; };
 		5C6B9E521FFFC3D100D51494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E511FFFC3D100D51494 /* AppDelegate.swift */; };
 		5C6B9E541FFFC3D100D51494 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E531FFFC3D100D51494 /* PhotosViewController.swift */; };
 		5C6B9E571FFFC3D100D51494 /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6B9E551FFFC3D100D51494 /* Photos.storyboard */; };
@@ -85,6 +88,9 @@
 		5C56466420DD5DDB006894A5 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		5C56466620DD64C2006894A5 /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
 		5C56466820DD65FC006894A5 /* CollectionPhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPhotosViewModel.swift; sourceTree = "<group>"; };
+		5C56467020DD932F006894A5 /* TableSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeader.swift; sourceTree = "<group>"; };
+		5C56467220DD935C006894A5 /* TableSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableSectionHeader.xib; sourceTree = "<group>"; };
+		5C56467420DD98E5006894A5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5C6B9E4E1FFFC3D100D51494 /* CodableUnsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodableUnsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6B9E511FFFC3D100D51494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C6B9E531FFFC3D100D51494 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				5C30719D200967B00096D9BF /* Storyboard.swift */,
+				5C56467420DD98E5006894A5 /* Colors.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -307,6 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				5C6B9EA02003B9D100D51494 /* Cells */,
+				5C56467020DD932F006894A5 /* TableSectionHeader.swift */,
+				5C56467220DD935C006894A5 /* TableSectionHeader.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -395,6 +404,7 @@
 				5C6B9E5C1FFFC3D100D51494 /* LaunchScreen.storyboard in Resources */,
 				5C6B9E84200020B800D51494 /* APIKeys.plist in Resources */,
 				5C56465320DD3799006894A5 /* Collections.storyboard in Resources */,
+				5C56467320DD935C006894A5 /* TableSectionHeader.xib in Resources */,
 				5C6B9E591FFFC3D100D51494 /* Assets.xcassets in Resources */,
 				5C6B9E571FFFC3D100D51494 /* Photos.storyboard in Resources */,
 			);
@@ -439,6 +449,7 @@
 				5C56464E20DC47C5006894A5 /* UserProfileCoordinator.swift in Sources */,
 				5C6B9E691FFFCA9D00D51494 /* APIEndpoint.swift in Sources */,
 				5C56466720DD64C2006894A5 /* PhotoListViewModel.swift in Sources */,
+				5C56467520DD98E5006894A5 /* Colors.swift in Sources */,
 				5C6B9E761FFFF9E900D51494 /* Photo.swift in Sources */,
 				5C6B9E6F1FFFCB1700D51494 /* HTTP.swift in Sources */,
 				5C6B9E822000169000D51494 /* User.swift in Sources */,
@@ -469,6 +480,7 @@
 				5C73ECEE20323A0900CAF1CE /* UICollectionView+Extensions.swift in Sources */,
 				5C8B05C02003BEC900BDC9F5 /* UIColor+Extensions.swift in Sources */,
 				5C6DABFE2003DD0000C3AC44 /* CardCollectionViewCell.swift in Sources */,
+				5C56467120DD932F006894A5 /* TableSectionHeader.swift in Sources */,
 				5C6B9E7C1FFFFC3E00D51494 /* UnsplashEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
