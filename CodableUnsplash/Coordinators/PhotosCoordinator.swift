@@ -44,7 +44,7 @@ extension PhotosCoordinator: PhotosViewControllerDelegate {
     func showPhoto(_ photo: Photo) {
         let viewController = Storyboard.photos.instantiate(viewController: PhotoDetailViewController.self)
         viewController.delegate = self
-        viewController.configure(with: photo)
+        viewController.viewModel = PhotoDetailViewModel(photo: photo)
         rootNavigationController.show(viewController, sender: rootNavigationController)
     }
 

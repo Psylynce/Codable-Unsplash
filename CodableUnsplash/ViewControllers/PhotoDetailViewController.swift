@@ -14,63 +14,18 @@ protocol PhotoDetailViewControllerDelegate: class {
 
 final class PhotoDetailViewController: UIViewController {
 
-    enum Section {
-        case photo(Photo)
-        case photographer(User)
-        case location(Location)
-        case exif(Exif)
-
-        var title: String? {
-            switch self {
-            case .location:
-                return "Location"
-            case .exif:
-                return "Camera Information"
-            default:
-                return nil
-            }
-        }
-    }
-
     @IBOutlet weak var tableView: UITableView!
 
     weak var delegate: PhotoDetailViewControllerDelegate?
 
-    private var sections = [Section]()
-    private var photo: Photo?
-    private let photoService = PhotoService()
+    var viewModel: PhotoDetailViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupAppearance()
-
-        if let photo = photo {
-            photoService.fetchPhoto(id: photo.id, completion: { [weak self] result in
-                guard let strongSelf = self else { return }
-
-                switch result {
-                case let .success(photo):
-                    strongSelf.configure(with: photo)
-                    strongSelf.tableView.reloadData()
-                case .failure:
-                    print("Failed detail fetch")
-                }
-            })
-        }
-    }
-
-    func configure(with photo: Photo) {
-        self.photo = photo
-
-        sections = [.photo(photo), .photographer(photo.user)]
-
-        if let location = photo.location {
-            sections.append(.location(location))
-        }
-
-        if let exif = photo.exif, exif.rows.isEmpty == false {
-            sections.append(.exif(exif))
+        viewModel.fetchPhoto { [weak tableView] in
+            tableView?.reloadData()
         }
     }
 
@@ -89,11 +44,11 @@ final class PhotoDetailViewController: UIViewController {
 
 extension PhotoDetailViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return viewModel.sections.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch sections[section] {
+        switch viewModel.sections[section] {
         case let .location(location):
             return location.rows.count
         case let .exif(exif):
@@ -104,7 +59,7 @@ extension PhotoDetailViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = sections[indexPath.section]
+        let section = viewModel.sections[indexPath.section]
 
         var cell: UITableViewCell
         switch section {
@@ -142,7 +97,7 @@ extension PhotoDetailViewController: UITableViewDataSource {
 
 extension PhotoDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch sections[indexPath.section] {
+        switch viewModel.sections[indexPath.section] {
         case let .photographer(user):
             delegate?.showUser(user)
         default:
@@ -152,7 +107,7 @@ extension PhotoDetailViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let section = sections[indexPath.section]
+        let section = viewModel.sections[indexPath.section]
 
         switch section {
         case let .photo(photo):
@@ -164,11 +119,11 @@ extension PhotoDetailViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return sections[section].title == nil ? 0 : 50
+        return viewModel.sections[section].title == nil ? 0 : 50
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let title = sections[section].title
+        let title = viewModel.sections[section].title
 
         if title == nil {
             return nil
