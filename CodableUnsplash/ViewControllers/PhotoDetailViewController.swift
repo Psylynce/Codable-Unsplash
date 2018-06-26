@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
 
 protocol PhotoDetailViewControllerDelegate: class {
     func showUser(_ user: User)
@@ -19,14 +22,17 @@ final class PhotoDetailViewController: UIViewController {
     weak var delegate: PhotoDetailViewControllerDelegate?
 
     var viewModel: PhotoDetailViewModel!
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupAppearance()
-        viewModel.fetchPhoto { [weak tableView] in
-            tableView?.reloadData()
-        }
+        viewModel.fetchPhoto()
+
+        viewModel.sections.asObservable()
+        .bind(to: tableView.rx.items(dataSource: PhotoDetailViewController.dataSource()))
+        .disposed(by: disposeBag)
     }
 
     private func setupAppearance() {
@@ -35,71 +41,46 @@ final class PhotoDetailViewController: UIViewController {
         let nib = UINib(nibName: "TableSectionHeader", bundle: nil)
         tableView.register(nib, forHeaderFooterViewReuseIdentifier: TableSectionHeader.reuseIdentifier)
 
-        tableView.dataSource = self
         tableView.delegate = self
         tableView.estimatedRowHeight = 100
         tableView.separatorStyle = .none
     }
 }
 
-extension PhotoDetailViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.sections.count
-    }
+extension PhotoDetailViewController {
+    static func dataSource() -> RxTableViewSectionedReloadDataSource<PhotoDetailViewModel.Section> {
+        return RxTableViewSectionedReloadDataSource<PhotoDetailViewModel.Section>(configureCell: { (dataSource, tableView, indexPath, sectionItem) -> UITableViewCell in
+            switch dataSource[indexPath] {
+            case let .photo(photo):
+                let cell: PhotoTableViewCell = tableView.dequeueCell(for: indexPath)
+                cell.configure(with: photo)
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch viewModel.sections[section] {
-        case let .location(location):
-            return location.rows.count
-        case let .exif(exif):
-            return exif.rows.count
-        default:
-            return 1
-        }
-    }
+                return cell
+            case let .photographer(user):
+                let cell: PhotographerTableViewCell = tableView.dequeueCell(for: indexPath)
+                cell.configure(with: user)
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = viewModel.sections[indexPath.section]
+                return cell
+            case let .location(row), let .exif(row):
+                let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+                cell.textLabel?.text = row.title
+                cell.textLabel?.textColor = Colors.gray333
+                cell.detailTextLabel?.text = row.value
 
-        var cell: UITableViewCell
-        switch section {
-        case let .photo(photo):
-            let photoCell: PhotoTableViewCell = tableView.dequeueCell(for: indexPath)
-            photoCell.configure(with: photo)
-
-            cell = photoCell
-        case let .photographer(user):
-            let photographerCell: PhotographerTableViewCell = tableView.dequeueCell(for: indexPath)
-            photographerCell.configure(with: user)
-
-            cell = photographerCell
-        case let .location(location):
-            let locationCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
-            let row = location.rows[indexPath.row]
-            locationCell.textLabel?.text = row.title
-            locationCell.textLabel?.textColor = Colors.gray333
-            locationCell.detailTextLabel?.text = row.value
-
-            cell = locationCell
-        case let .exif(exif):
-            let exifCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
-            let row = exif.rows[indexPath.row]
-            exifCell.textLabel?.text = row.title
-            exifCell.textLabel?.textColor = Colors.gray333
-            exifCell.detailTextLabel?.text = row.value
-
-            cell = exifCell
-        }
-
-        return cell
+                return cell
+            }
+        })
     }
 }
 
 extension PhotoDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch viewModel.sections[indexPath.section] {
-        case let .photographer(user):
-            delegate?.showUser(user)
+        switch viewModel.sections.value[indexPath.section] {
+        case let .photographer(items):
+            let sectionItem = items[indexPath.row]
+            if case let .photographer(user) = sectionItem {
+                delegate?.showUser(user)
+            }
         default:
             return
         }
@@ -107,10 +88,13 @@ extension PhotoDetailViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let section = viewModel.sections[indexPath.section]
+        let section = viewModel.sections.value[indexPath.section]
 
         switch section {
-        case let .photo(photo):
+        case let .photo(items):
+            let sectionItem = items[indexPath.row]
+            guard case let .photo(photo) = sectionItem else { return 0 }
+
             let height = (tableView.bounds.width * CGFloat(photo.height)) / CGFloat(photo.width)
             return height
         default:
@@ -119,11 +103,11 @@ extension PhotoDetailViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return viewModel.sections[section].title == nil ? 0 : 50
+        return viewModel.sections.value[section].title == nil ? 0 : 50
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let title = viewModel.sections[section].title
+        let title = viewModel.sections.value[section].title
 
         if title == nil {
             return nil
