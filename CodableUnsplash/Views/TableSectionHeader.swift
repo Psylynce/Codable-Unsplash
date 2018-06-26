@@ -11,5 +11,6 @@ import UIKit
 final class TableSectionHeader: UITableViewHeaderFooterView {
 
     @IBOutlet weak var titleLabel: UILabel!
-    
 }
+
+extension TableSectionHeader: NibView {}

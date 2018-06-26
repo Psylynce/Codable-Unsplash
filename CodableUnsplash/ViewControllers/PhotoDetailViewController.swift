@@ -38,12 +38,11 @@ final class PhotoDetailViewController: UIViewController {
     private func setupAppearance() {
         navigationItem.largeTitleDisplayMode = .never
 
-        let nib = UINib(nibName: "TableSectionHeader", bundle: nil)
-        tableView.register(nib, forHeaderFooterViewReuseIdentifier: TableSectionHeader.reuseIdentifier)
-
         tableView.delegate = self
         tableView.estimatedRowHeight = 100
         tableView.separatorStyle = .none
+
+        tableView.register(TableSectionHeader.nib(), forHeaderFooterViewReuseIdentifier: TableSectionHeader.reuseIdentifier)
     }
 }
 

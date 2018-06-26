@@ -35,6 +35,7 @@
 		5C56467720E15DD1006894A5 /* PhotoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C56467620E15DD1006894A5 /* PhotoDetailViewModel.swift */; };
 		5C56467920E2791B006894A5 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C56467820E2791A006894A5 /* RxDataSources.framework */; };
 		5C56467B20E27A2A006894A5 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C56467A20E27A2A006894A5 /* Differentiator.framework */; };
+		5C56467D20E29094006894A5 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C56467C20E29094006894A5 /* NibView.swift */; };
 		5C6B9E521FFFC3D100D51494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E511FFFC3D100D51494 /* AppDelegate.swift */; };
 		5C6B9E541FFFC3D100D51494 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B9E531FFFC3D100D51494 /* PhotosViewController.swift */; };
 		5C6B9E571FFFC3D100D51494 /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6B9E551FFFC3D100D51494 /* Photos.storyboard */; };
@@ -97,6 +98,7 @@
 		5C56467620E15DD1006894A5 /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
 		5C56467820E2791A006894A5 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		5C56467A20E27A2A006894A5 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
+		5C56467C20E29094006894A5 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		5C6B9E4E1FFFC3D100D51494 /* CodableUnsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodableUnsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6B9E511FFFC3D100D51494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C6B9E531FFFC3D100D51494 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 			children = (
 				5C6B9EA42003BA5800D51494 /* ReusableView.swift */,
 				5C56466620DD64C2006894A5 /* PhotoListViewModel.swift */,
+				5C56467C20E29094006894A5 /* NibView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				5C73ECEE20323A0900CAF1CE /* UICollectionView+Extensions.swift in Sources */,
 				5C8B05C02003BEC900BDC9F5 /* UIColor+Extensions.swift in Sources */,
 				5C6DABFE2003DD0000C3AC44 /* CardCollectionViewCell.swift in Sources */,
+				5C56467D20E29094006894A5 /* NibView.swift in Sources */,
 				5C56467720E15DD1006894A5 /* PhotoDetailViewModel.swift in Sources */,
 				5C56467120DD932F006894A5 /* TableSectionHeader.swift in Sources */,
 				5C6B9E7C1FFFFC3E00D51494 /* UnsplashEndpoint.swift in Sources */,
