@@ -1,5 +1,5 @@
 //
-//  SearchViewModel.swift
+//  SearchResults.swift
 //  CodableUnsplash
 //
 //  Created by Justin Powell on 6/27/18.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-class SearchViewModel: NSObject {
+struct SearchResults<T: Codable>: Codable {
 
-    var query: String?
-    var placeholder: String = "Search"
+    let totalPages: Int
+    let results: [T]
 }

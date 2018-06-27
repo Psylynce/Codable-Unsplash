@@ -18,9 +18,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kER-zw-SKo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kER-zw-SKo">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchPhotoTableViewCell" rowHeight="100" id="Rx1-4d-s7d" customClass="SearchPhotoTableViewCell" customModule="CodableUnsplash" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rx1-4d-s7d" id="JHe-io-MQT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e2G-Je-WTD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNb-lQ-Ahz">
+                                                    <rect key="frame" x="164" y="39" width="46" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PNb-lQ-Ahz" firstAttribute="centerX" secondItem="JHe-io-MQT" secondAttribute="centerX" id="IXc-3V-Fx0"/>
+                                                <constraint firstAttribute="bottom" secondItem="e2G-Je-WTD" secondAttribute="bottom" id="MCp-gx-4Py"/>
+                                                <constraint firstAttribute="trailing" secondItem="e2G-Je-WTD" secondAttribute="trailing" id="P5c-5g-mQs"/>
+                                                <constraint firstItem="e2G-Je-WTD" firstAttribute="top" secondItem="JHe-io-MQT" secondAttribute="top" id="Ywi-Dw-UqT"/>
+                                                <constraint firstItem="PNb-lQ-Ahz" firstAttribute="centerY" secondItem="JHe-io-MQT" secondAttribute="centerY" id="itt-mZ-MDH"/>
+                                                <constraint firstItem="e2G-Je-WTD" firstAttribute="leading" secondItem="JHe-io-MQT" secondAttribute="leading" id="zPB-cb-hPg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="PNb-lQ-Ahz" id="SN5-S7-aRO"/>
+                                            <outlet property="photoImageView" destination="e2G-Je-WTD" id="FWi-wW-2eF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="U3A-0I-V8L" id="nPM-Q5-NIT"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJH-J7-H3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="123"/>
+            <point key="canvasLocation" x="-82.400000000000006" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>

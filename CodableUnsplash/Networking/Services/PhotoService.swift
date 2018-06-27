@@ -26,4 +26,11 @@ final class PhotoService: Service {
 
         queue.addOperation(operation)
     }
+
+    func searchPhotos(query: String, page: Int = 1, completion: ServiceCompletion<SearchResults<Photo>>?) {
+        let endpoint = PhotoEndpoint.searchPhotos(query: query, page: page)
+        let operation = APIRequestOperation<SearchResults<Photo>>(endpoint: endpoint, completion: completion)
+
+        queue.addOperation(operation)
+    }
 }

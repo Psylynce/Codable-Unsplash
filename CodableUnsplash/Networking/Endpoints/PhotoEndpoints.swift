@@ -16,4 +16,12 @@ struct PhotoEndpoint {
     static func fetchPhoto(id: String) -> APIEndpoint {
         return UnsplashEndpoint.configured.path("/photos/\(id)")
     }
+
+    static func searchPhotos(query: String, page: Int = 1) -> APIEndpoint {
+        let searchParams: [URLQueryItem] = [
+            URLQueryItem(name: "query", value: query),
+            URLQueryItem(name: "page", value: "\(page)")
+        ]
+        return UnsplashEndpoint.configured.path("/search/photos").queryParameters(searchParams)
+    }
 }
