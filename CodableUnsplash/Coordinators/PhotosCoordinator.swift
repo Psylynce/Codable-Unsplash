@@ -36,6 +36,17 @@ final class PhotosCoordinator: Coordinator {
         let photosViewController = Storyboard.photos.instantiate(viewController: PhotosViewController.self)
         photosViewController.delegate = self
         photosViewController.viewModel = viewModel
+
+        if animated == false {
+            let searchViewModel = SearchViewModel()
+            let searchViewController = Storyboard.search.instantiate(viewController: SearchViewController.self)
+            let searchController = UISearchController(searchResultsController: searchViewController)
+            searchController.searchResultsUpdater = searchViewController
+            searchController.searchBar.placeholder = searchViewModel.placeholder
+
+            photosViewController.searchController = searchController
+        }
+
         rootNavigationController.pushViewController(photosViewController, animated: animated)
     }
 }

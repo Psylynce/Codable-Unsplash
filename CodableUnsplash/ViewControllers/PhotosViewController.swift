@@ -22,6 +22,7 @@ final class PhotosViewController: UIViewController {
     weak var delegate: PhotosViewControllerDelegate?
 
     var viewModel: PhotoListViewModel!
+    var searchController: UISearchController?
 
     private let disposeBag = DisposeBag()
 
@@ -37,6 +38,16 @@ final class PhotosViewController: UIViewController {
         }.disposed(by: disposeBag)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.hidesSearchBarWhenScrolling = false
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationItem.hidesSearchBarWhenScrolling = true
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
@@ -48,6 +59,8 @@ final class PhotosViewController: UIViewController {
     private func setupAppearance() {
         navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
 
         collectionView.delegate = self
     }

@@ -12,6 +12,7 @@ import UIKit
 enum Storyboard: String {
     case collections
     case photos
+    case search
 
     func instantiate<T: StoryboardViewController>(viewController: T.Type) -> T {
         return UIStoryboard(name: self.rawValue.capitalized, bundle: nil).instantiateViewController(withIdentifier: viewController.storyboardIdentifier) as! T

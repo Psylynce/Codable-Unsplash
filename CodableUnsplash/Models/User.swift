@@ -30,7 +30,7 @@ struct User: Codable {
     let location: String?
     let links: Links
     let profileImage: ProfileImage
-    let totalLikes, totalPhotos, totalCollections: Int
+    let totalLikes, totalPhotos, totalCollections: Int?
 }
 
 struct ProfileImage: Codable {
