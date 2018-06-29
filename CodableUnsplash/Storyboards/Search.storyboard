@@ -32,24 +32,33 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e2G-Je-WTD">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jah-z2-2tY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNb-lQ-Ahz">
-                                                    <rect key="frame" x="164" y="39" width="46" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <rect key="frame" x="117" y="17" width="141" height="64.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="54"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="PNb-lQ-Ahz" firstAttribute="centerX" secondItem="JHe-io-MQT" secondAttribute="centerX" id="IXc-3V-Fx0"/>
+                                                <constraint firstItem="PNb-lQ-Ahz" firstAttribute="centerX" secondItem="JHe-io-MQT" secondAttribute="centerX" id="7KV-hP-kjO"/>
+                                                <constraint firstItem="jah-z2-2tY" firstAttribute="top" secondItem="JHe-io-MQT" secondAttribute="top" id="9DR-Ce-XlZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="e2G-Je-WTD" secondAttribute="bottom" id="MCp-gx-4Py"/>
+                                                <constraint firstAttribute="bottom" secondItem="jah-z2-2tY" secondAttribute="bottom" id="NKY-V2-hMS"/>
                                                 <constraint firstAttribute="trailing" secondItem="e2G-Je-WTD" secondAttribute="trailing" id="P5c-5g-mQs"/>
+                                                <constraint firstItem="jah-z2-2tY" firstAttribute="leading" secondItem="JHe-io-MQT" secondAttribute="leading" id="Pwo-6g-1ly"/>
+                                                <constraint firstAttribute="trailing" secondItem="jah-z2-2tY" secondAttribute="trailing" id="Rl9-Ij-cb5"/>
                                                 <constraint firstItem="e2G-Je-WTD" firstAttribute="top" secondItem="JHe-io-MQT" secondAttribute="top" id="Ywi-Dw-UqT"/>
-                                                <constraint firstItem="PNb-lQ-Ahz" firstAttribute="centerY" secondItem="JHe-io-MQT" secondAttribute="centerY" id="itt-mZ-MDH"/>
+                                                <constraint firstItem="PNb-lQ-Ahz" firstAttribute="centerY" secondItem="JHe-io-MQT" secondAttribute="centerY" id="a1J-n3-HN0"/>
                                                 <constraint firstItem="e2G-Je-WTD" firstAttribute="leading" secondItem="JHe-io-MQT" secondAttribute="leading" id="zPB-cb-hPg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="PNb-lQ-Ahz" id="SN5-S7-aRO"/>
+                                            <outlet property="overlayView" destination="jah-z2-2tY" id="CDO-kY-CaB"/>
                                             <outlet property="photoImageView" destination="e2G-Je-WTD" id="FWi-wW-2eF"/>
                                         </connections>
                                     </tableViewCell>
